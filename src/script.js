@@ -1,14 +1,23 @@
-import gsap from "gsap";
+console.log("Script loaded");
 
-document.querySelectorAll(".section").forEach((section) => {
-    section.addEventListener("mouseenter", () => {
-        gsap.to(".section", { duration: 0.5, clipPath: "none", width: "100%", height: "100%" });
-        section.style.zIndex = "2";
-    });
-    section.addEventListener("mouseleave", () => {
-        gsap.to(".section", { duration: 0.5, clipPath: "", width: "", height: "" });
-    });
-    section.addEventListener("click", () => {
-        section.querySelector(".hidden-text").style.display = "block";
-    });
-});
+// Univerzálna funkcia na rozšírenie sekcie pri hoveri
+function applyHoverEffect(triggerSelector, targetSelector) {
+    const triggerElement = document.querySelector(triggerSelector);
+    const targetElement = document.querySelector(targetSelector);
+
+    if (triggerElement && targetElement) {
+        triggerElement.addEventListener("mouseenter", () => {
+            targetElement.classList.add("expanded");
+            console.log(`Hover started: ${targetSelector}`);
+        });
+
+        triggerElement.addEventListener("mouseleave", () => {
+            targetElement.classList.remove("expanded");
+            console.log(`Hover ended: ${targetSelector}`);
+        });
+    }
+}
+
+// Použitie funkcie pre ľavú aj pravú stranu
+applyHoverEffect(".left span", ".left");
+applyHoverEffect(".right span", ".right");
