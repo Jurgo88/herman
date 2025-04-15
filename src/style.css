@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
+:root {
+    --color1: #A4CD39;
+    --color2: #48B8E9;
+    --color3: #F5F5F5;
+    --color4: #000000;
+    --color5: #FFFFFF;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,15 +17,49 @@
 body, html {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: "Space Grotesk", sans-serif;
 }
 
 .container {
-    position: relative;
-    width: 100%;
+}
+
+.hero{
     height: 100vh;
-    background-color: #A4CD39;
+    /* width: 100vw; */
+    position: relative;
+    overflow: hidden;
+}
+.hero .top {
+  height: 50vh;
+  background-color: var(--color1);
+  width: 100%;
+}
+.hero .bottom {
+  height: 50vh;
+  background-color: var(--color2);
+  width: 100%;
+}
+.hero p {
+    font-size: 5rem;
+    /* color: black; */
+    text-align: center;
+    padding: 5%;
+    color: var(--color5);
+    text-transform: uppercase;
+    font-weight: 900;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero span {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    padding: 5%;
+    color: var(--color4);
 }
 
 .left, .right {
@@ -100,4 +142,47 @@ body, html {
     display: block;
     transition: all 1.5s ease-in-out;
     opacity: 1;
+}
+
+/* ABOUT US */
+.about-us {
+  background-color: aliceblue;
+  height: ;
+}
+.title {
+  font-size: 5rem;
+  color: black;
+  text-align: center;
+  padding: 5%;
+  color: var(--color2);
+  text-transform: uppercase;
+}
+.about-us p {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    padding: 5%;
+    color: var(--color4);
+}
+.tripple-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+}
+.card {
+    background-color: var(--color3);
+    width: 30%;
+    height: 50vh;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.works {
+    background-color: var(--color3);
+    height: 100vh;
 }
