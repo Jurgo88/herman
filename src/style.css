@@ -182,18 +182,44 @@ body, html {
     transform: scale(1.05);
 }
 
-.works {
-    background-color: var(--color3);
-    height: 100vh;
-}
 
 /******************** WORKS ********************/
+
+.our-works {
+    background-color: var(--color3);
+    padding: 5%;
+}
+.works {
+    background-color: var(--color3);
+    position: relative;
+}
+.work-label {
+    display: block;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--color2);
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(0,0,0,0.2);
+    padding: 15%;
+}
 .circle {
     width: 300px;
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
     position: relative;
+  }
+
+  /* .circle :hover {
+    transform: scale(1.5);
+    transition: transform 0.3s ease-in-out;
+  } */
+
+  .work-item  :hover  {
+    transform: scale(1.5);
+    transition: transform 0.5s ease-in-out;
   }
   
   .half {
@@ -244,3 +270,50 @@ body, html {
     font-size: 5rem;
     color: var(--color2);
   }
+
+  .work-gallery h3 {
+    padding-top: 5%;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+    .work-gallery {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .work-gallery img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+    }
+    .work-gallery img:hover {
+        transform: scale(1.1);
+    }
+    .work-gallery img:active {
+        transform: scale(0.9);
+    }
+    .work-gallery img:focus {
+        outline: none;
+    }
+    .work-gallery img:focus-visible {
+        outline: 2px solid var(--color2);
+    }
+    .work-gallery img:focus-within {
+        outline: 2px solid var(--color2);
+    }
+    .work-gallery img:focus-within:active {
+        transform: scale(0.9);
+    }
+    .work-gallery img:focus-within:hover {
+        transform: scale(1.1);
+    }
+    .work-gallery p {
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 10px;
+    } 
+  
