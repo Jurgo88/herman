@@ -172,11 +172,10 @@ body, html {
 }
 .card {
     background-color: var(--color3);
-    width: 30%;
-    height: 50vh;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
+    margin: 5%;
 }
 .card:hover {
     transform: scale(1.05);
@@ -233,12 +232,18 @@ body, html {
   .top-left {
     clip-path: polygon(0 0, 100% 0, 0 100%);
   }
-  
+
+
   /* Dolná pravá polovica */
   .bottom-right {
     clip-path: polygon(100% 100%, 0 100%, 100% 0);
   }
 
+  .bottom-right:hover {
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: all 2.5s ease-in-out;
+  }
 
   .label {
     position: absolute;
