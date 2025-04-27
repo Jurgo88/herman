@@ -22,6 +22,9 @@ body, html {
 }
 
 .container {
+    box-shadow: 0 4px 8px #0000001a;
+    top: 50px;
+    position: relative;
 }
 
 .hero{
@@ -321,4 +324,85 @@ body, html {
         text-align: center;
         margin-top: 10px;
     } 
+
+
+    /*************** CONTACT US *****************/
+    #contact {
+        background-color: var(--color2);
+        color: #242424
+    }
+    
+    #contact .container {
+        position: relative;
+        top: -50px;
+        padding: 5%;
+        background-color: #f2f2f2;
+        box-shadow: 0 4px 8px #0000001a;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px
+    }
+    
+    #contact h2 {
+        color: #242424;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        padding-top: 120px
+    }
+    
+    #contact p {
+        padding: 5%
+    }
+    
+    #contact a {
+        text-decoration: none;
+        font-size: 1.5rem
+    }
+    
+    #contact form {
+        padding: 5%;
+        background-color: #f2f2f2
+    }
+    
+    #contact form label {
+        float: left
+    }
+
+    #contact form input,#contact form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 0;
+        background-color: #f2f2f2;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid var(--color2);
+        background-image: linear-gradient(to top,var(--color1) 3px,rgba(156,39,176,0) 2px),linear-gradient(to top,var(--color2) 1px,rgba(210,210,210,0) 1px);
+        background-size: 0% 100%,0% 100%;
+        background-repeat: no-repeat;
+        transition: background-size .3s ease-in-out;
+        box-shadow: none;
+    }
+
+    #contact form input:focus,#contact form textarea:focus {
+        box-shadow: none;
+        background-size: 100% 100%,100% 100%;
+        transition: background-size .3s ease-in-out
+    }
+    
+    form-control {
+        border-radius: 0;
+        transition-duration: .3s;
+        box-shadow: none
+    }
+
+    .contact .info {
+        box-shadow: 0 4px 8px #0000001a;
+        padding: 5%;
+        height: 100%;
+    }
   
+    .info i {
+        font-size: 3.5rem;
+        color: var(--color1)
+    }
