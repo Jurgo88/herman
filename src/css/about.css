@@ -1,0 +1,35 @@
+.about-us {
+    background-color: aliceblue;
+  }
+  .title {
+    font-size: 5rem;
+    color: black;
+    text-align: center;
+    padding: 5%;
+    color: var(--color2);
+    text-transform: uppercase;
+  }
+  .about-us p {
+      font-size: 2rem;
+      color: black;
+      text-align: center;
+      padding: 5%;
+      color: var(--color4);
+  }
+  .tripple-cards {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 5%;
+  }
+  .card {
+      background-color: var(--color3);
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+      margin: 5%;
+  }
+  .card:hover {
+      transform: scale(1.05);
+  }
+  

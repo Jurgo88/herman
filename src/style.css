@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url(css/hero.css);
+@import url(css/about.css);
+@import url(css/works.css);
+@import url(css/contact.css);
+@import url(css/services.css);
 
 :root {
     --color1: #A4CD39;
@@ -22,387 +27,33 @@ body, html {
 }
 
 .container {
-    box-shadow: 0 4px 8px #0000001a;
+    /* box-shadow: 0 4px 8px #0000001a; */
     top: 50px;
     position: relative;
 }
 
-.hero{
-    height: 100vh;
-    /* width: 100vw; */
-    position: relative;
-    overflow: hidden;
-}
-.hero .top {
-  height: 50vh;
-  background-color: var(--color1);
-  width: 100%;
-}
-.hero .bottom {
-  height: 50vh;
-  background-color: var(--color2);
-  width: 100%;
-}
-.hero p {
-    font-size: 5rem;
-    /* color: black; */
-    text-align: center;
-    padding: 5%;
+.secondaryButton {
+    background-color: var(--color2);
     color: var(--color5);
-    text-transform: uppercase;
-    font-weight: 900;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.hero span {
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-decoration: none;
     font-size: 2rem;
-    color: black;
-    text-align: center;
-    padding: 5%;
-    color: var(--color4);
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    border: none;
 }
 
-.left, .right {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 900;
-    transition: clip-path 2.8s cubic-bezier(0.77, 0, 0.175, 1); /* Zmeníme na kratší prechod a použijeme cubic-bezier */
-}
 
-/* Farby pozadí */
-.left {
-    background: #A4CD39;
-    clip-path: polygon(0 0, 100% 0, 0 100%);
-    z-index: 1;
-    opacity: 0.5;
-}
-
-.right {
-    background: #48B8E9;
-    clip-path: polygon(100% 0, 100% 100%, 0 100%);
-}
-
-/* Štýly pre text */
-.left span, .right span {
-    position: relative;
-    z-index: 2;
-    cursor: pointer;
-    opacity: 1 !important;
-}
-
-.left span {
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    transform: translate(-25%, -25%);
-}
-
-.right span {
-    position: absolute;
-    bottom: 25%;
-    right: 25%;
-    transform: translate(-25%, -25%);
-}
-
-/* Animácia pri hoveri */
-.left.expanded, .right.expanded {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 10;
-    clip-path: inset(0 0 0 0);
-    /* transition: clip-path 2.8s cubic-bezier(0.77, 0, 0.175, 1); Rovnaký prechod ako pre normálny stav */
-    opacity: 1;
-    transition: all 1.5s ease-in-out;
-    
-}
-.pica {
-    /* display: none; */
-    opacity: 0;
-}
-.left.expanded .pica {
-    display: block;
-    transition: all 1.5s ease-in-out;
-    opacity: 1;
-}
-.kokot {
-    /* display: none; */
-    opacity: 0;
-}
-.right.expanded .kokot {
-    display: block;
-    transition: all 1.5s ease-in-out;
-    opacity: 1;
-}
 
 /*************** ABOUT US ***************/
 
-.about-us {
-  background-color: aliceblue;
-}
-.title {
-  font-size: 5rem;
-  color: black;
-  text-align: center;
-  padding: 5%;
-  color: var(--color2);
-  text-transform: uppercase;
-}
-.about-us p {
-    font-size: 2rem;
-    color: black;
-    text-align: center;
-    padding: 5%;
-    color: var(--color4);
-}
-.tripple-cards {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5%;
-}
-.card {
-    background-color: var(--color3);
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-    margin: 5%;
-}
-.card:hover {
-    transform: scale(1.05);
-}
 
 
 /******************** WORKS ********************/
 
-.our-works {
-    background-color: var(--color3);
-    padding: 5%;
-}
-.works {
-    background-color: var(--color3);
-    position: relative;
-}
-.work-label {
-    display: block;
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: var(--color2);
-    text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0 0 5px rgba(0,0,0,0.2);
-    padding: 15%;
-}
-.circle {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-  }
 
-  /* .circle :hover {
-    transform: scale(1.5);
-    transition: transform 0.3s ease-in-out;
-  } */
-
-  .work-item  :hover  {
-    transform: scale(1.5);
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .half {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* Horná ľavá polovica */
-  .top-left {
-    clip-path: polygon(0 0, 100% 0, 0 100%);
-  }
-
-
-  /* Dolná pravá polovica */
-  .bottom-right {
-    clip-path: polygon(100% 100%, 0 100%, 100% 0);
-  }
-
-  .bottom-right:hover {
-    z-index: 1;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transition: all 2.5s ease-in-out;
-  }
-
-  .label {
-    position: absolute;
-    color: var(--color2);
-    font-weight: bold;
-    font-size: 2.2rem;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    z-index: 2;
-  }
-  
-  .before {
-    top: 10%;
-    left: 10%;
-  }
-  
-  .after {
-    bottom: 10%;
-    right: 10%;
-  }
-
-  
-  .circle-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    font-size: 5rem;
-    color: var(--color2);
-  }
-
-  .work-gallery h3 {
-    padding-top: 5%;
-    text-align: center;
-    font-size: 2.5rem;
-  }
-    .work-gallery {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    .work-gallery img {
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        object-fit: cover;
-        transition: transform 0.3s ease-in-out;
-    }
-    .work-gallery img:hover {
-        transform: scale(1.1);
-    }
-    .work-gallery img:active {
-        transform: scale(0.9);
-    }
-    .work-gallery img:focus {
-        outline: none;
-    }
-    .work-gallery img:focus-visible {
-        outline: 2px solid var(--color2);
-    }
-    .work-gallery img:focus-within {
-        outline: 2px solid var(--color2);
-    }
-    .work-gallery img:focus-within:active {
-        transform: scale(0.9);
-    }
-    .work-gallery img:focus-within:hover {
-        transform: scale(1.1);
-    }
-    .work-gallery p {
-        font-size: 2rem;
-        text-align: center;
-        margin-top: 10px;
-    } 
 
 
     /*************** CONTACT US *****************/
-    #contact {
-        background-color: var(--color2);
-        color: #242424
-    }
     
-    #contact .container {
-        position: relative;
-        top: -50px;
-        padding: 5%;
-        background-color: #f2f2f2;
-        box-shadow: 0 4px 8px #0000001a;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px
-    }
-    
-    #contact h2 {
-        color: #242424;
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        padding-top: 120px
-    }
-    
-    #contact p {
-        padding: 5%
-    }
-    
-    #contact a {
-        text-decoration: none;
-        font-size: 1.5rem
-    }
-    
-    #contact form {
-        padding: 5%;
-        background-color: #f2f2f2
-    }
-    
-    #contact form label {
-        float: left
-    }
-
-    #contact form input,#contact form textarea {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 0;
-        background-color: #f2f2f2;
-        border: none;
-        outline: none;
-        border-bottom: 1px solid var(--color2);
-        background-image: linear-gradient(to top,var(--color1) 3px,rgba(156,39,176,0) 2px),linear-gradient(to top,var(--color2) 1px,rgba(210,210,210,0) 1px);
-        background-size: 0% 100%,0% 100%;
-        background-repeat: no-repeat;
-        transition: background-size .3s ease-in-out;
-        box-shadow: none;
-    }
-
-    #contact form input:focus,#contact form textarea:focus {
-        box-shadow: none;
-        background-size: 100% 100%,100% 100%;
-        transition: background-size .3s ease-in-out
-    }
-    
-    form-control {
-        border-radius: 0;
-        transition-duration: .3s;
-        box-shadow: none
-    }
-
-    .contact .info {
-        box-shadow: 0 4px 8px #0000001a;
-        padding: 5%;
-        height: 100%;
-    }
-  
-    .info i {
-        font-size: 3.5rem;
-        color: var(--color1)
-    }
