@@ -83,6 +83,7 @@
               <img src="public/assets/img/DL_01-01.jpg" class="half bottom-right" alt="">
               <img src="public/assets/img/DL_02-01.jpg" class="half top-left" alt="">
             </div>
+            <br>
           </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -105,21 +106,62 @@
                 </text>
               </svg>
             </div>
+            <br>
           </div>
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
           <div class="work-item">
             <span class="work-label">Fasády</span>
-            <div class="circle">
-              <img src="public/assets/img/FS_01-01.jpg" class="half top-left" alt="">
-              <img src="public/assets/img/FS_02-01.jpg" class="half bottom-right" alt="">
+            <div class="slider-wrapper">
+              <div class="slider-container" id="sliderContainer">
+                <img src="public/assets/img/FS_01-01.jpg" alt="Before" class="slider-img">
+                <div class="slider-overlay" id="sliderOverlay">
+                  <img src="public/assets/img/FS_02-01.jpg" alt="After" class="slider-img">
+                </div>
+                <div class="slider-handle" id="sliderHandle"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      <script>
+        const sliderContainer = document.getElementById('sliderContainer');
+        const sliderOverlay = document.getElementById('sliderOverlay');
+        const sliderHandle = document.getElementById('sliderHandle');
+      
+        function updateSlider(x) {
+          const rect = sliderContainer.getBoundingClientRect();
+          let offsetX = x - rect.left;
+          offsetX = Math.max(0, Math.min(offsetX, rect.width));
+      
+          const percent = (offsetX / rect.width) * 100;
+          sliderOverlay.style.width = `${percent}%`;
+          sliderHandle.style.left = `${percent}%`;
+        }
+      
+        // Desktop - myš
+        sliderContainer.addEventListener('mousemove', (e) => {
+          if (e.buttons !== 1) return; // len keď je stlačené tlačidlo myši
+          updateSlider(e.clientX);
+        });
+      
+        sliderContainer.addEventListener('mousedown', (e) => {
+          updateSlider(e.clientX);
+        });
+      
+        // Mobil - dotyk
+        sliderContainer.addEventListener('touchstart', (e) => {
+          updateSlider(e.touches[0].clientX);
+        });
+      
+        sliderContainer.addEventListener('touchmove', (e) => {
+          updateSlider(e.touches[0].clientX);
+        });
+      </script>
+
       <div class="work-gallery">
-        <h3 >Ďalej čistíme</h3>
+        <h3>Ďalej čistíme</h3>
         <br>
         <p>
           okná a okenné rámy, ploty a brány, terasy a balkóny,bazény a vírivky,
