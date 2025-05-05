@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>|Projekt Herman</title>
     <link rel="stylesheet" href="/src/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollSmoother.min.js"></script> -->
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/fc3a6f972f.js" crossorigin="anonymous"></script>
@@ -18,7 +19,16 @@
 
 </head>
 <body>
-  <section class="hero">  
+  <header class="header">
+
+    <nav class="navbar sticky-top bg-success">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Sticky Navbar</a>
+      </div>
+    </nav>
+  </header>
+  <section class="hero"> 
+
     <div class="row">
         <div class="top"><p>Profesionálne <br> čistenie</p></div>
         <div class="bottom"><p>Bazény</p>
@@ -38,44 +48,43 @@
     <div class="container">
       <h2 class="title">Pri práci používame</h2>
       <div class="row">
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="col-12 col-md-4 mb-4">
           <div class="card">
-            <img src="public/assets/img/logo_gs_2-02.svg" alt="tlak">          
+            <img src="public/assets/img/logo_gs_2-02.svg" alt="tlak" class="card-img-top">
           </div>
           <div class="service-info">
             Tu to tlakujeme jak nikdy predtým. <br>
           </div>
         </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="col-12 col-md-4 mb-4">
           <div class="card">
-            <img src="public/assets/img/logo_gs_2-03.svg" alt="chemiu">          
+            <img src="public/assets/img/logo_gs_2-03.svg" alt="chemiu" class="card-img-top">
           </div>
           <div class="service-info">
             Tu to chemicky čistíme. <br>
             Nejeden bazén sa nám podarilo zachrániť.
           </div>
         </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="col-12 col-md-4 mb-4">
           <div class="card">
-            <img src="public/assets/img/logo_gs_2-04.svg" alt="paru">
+            <img src="public/assets/img/logo_gs_2-04.svg" alt="paru" class="card-img-top">
           </div>
           <div class="service-info">
             Tu to paríme. <br>
             Všetko sa dá, len treba chcieť.
           </div>
         </div>
-
       </div>
-
-      </div>
+    </div>
   </section>
+  
 
   <section class="our-works">
     <div class="container">
       <h2 class="title">Naše práce</h2>
       <div class="row">
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-          <div class="work-item">
+        <div class="col-12 col-md-4">
+          <!-- <div class="work-item">
             <span class="work-label">Dlažby</span>
             <div class="circle">
               <span class="label before">Predtým</span>
@@ -84,10 +93,24 @@
               <img src="public/assets/img/DL_02-01.jpg" class="half top-left" alt="">
             </div>
             <br>
-          </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          </div> -->
+
           <div class="work-item">
+            <span class="work-label">Dlažby</span>
+            <div class="slider-wrapper">
+              <div class="slider-container" >
+                <img src="public/assets/img/DL_01-01.jpg" alt="Before" class="slider-img">
+                <div class="slider-overlay" >
+                  <img src="public/assets/img/DL_02-01.jpg" alt="After" class="slider-img">
+                </div>
+                <div class="slider-handle" ></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-12 col-md-4">
+          <!-- <div class="work-item">
             <span class="work-label">Strechy</span>
             <div class="circle">
               <img src="public/assets/img/KR_01-01-01-01-01.jpg" class="half top-left" alt="">
@@ -107,7 +130,21 @@
               </svg>
             </div>
             <br>
+          </div> -->
+
+          <div class="work-item">
+            <span class="work-label">Strechy</span>
+            <div class="slider-wrapper">
+              <div class="slider-container" id="sliderContainer">
+                <img src="public/assets/img/KR_01-01-01-01-01.jpg" alt="Before" class="slider-img">
+                <div class="slider-overlay" id="sliderOverlay">
+                  <img src="public/assets/img/KR_02-01-01-01-01.jpg" alt="After" class="slider-img">
+                </div>
+                <div class="slider-handle" id="sliderHandle"></div>
+              </div>
+            </div>
           </div>
+
         </div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
           <div class="work-item">
@@ -125,7 +162,7 @@
         </div>
       </div>
 
-      <script>
+      <!-- <script>
         const sliderContainer = document.getElementById('sliderContainer');
         const sliderOverlay = document.getElementById('sliderOverlay');
         const sliderHandle = document.getElementById('sliderHandle');
@@ -158,7 +195,7 @@
         sliderContainer.addEventListener('touchmove', (e) => {
           updateSlider(e.touches[0].clientX);
         });
-      </script>
+      </script> -->
 
       <div class="work-gallery">
         <h3>Ďalej čistíme</h3>
@@ -177,6 +214,45 @@
 
 
   </section>
+
+  <section class="other-works">
+    <div class="container">
+      <h3 class="text-center">Naše ďalšie práce</h3>
+      <div class="row">
+        <p class="text-center">
+          <a href="#" id="showGallery" class="btn btn-primary">Klikni sem</a>
+        </p>
+      </div>
+  
+      <!-- Skrytý kontajner na fotky -->
+      <div id="photoGallery" class="row mt-4" style="display: none;">
+        <!-- Tu budú tvoje fotky -->
+        <div class="col-md-6 mb-3">
+          <img src="public/assets/img/FS_01-01.jpg" class="img-fluid rounded" alt="Práca 1">
+        </div>
+        <div class="col-md-6 mb-3">
+          <img src="public/assets/img/FS_02-01.jpg" class="img-fluid rounded" alt="Práca 2">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('showGallery').addEventListener('click', function(e) {
+      e.preventDefault();
+      const gallery = document.getElementById('photoGallery');
+  
+      // Zobraz/Skry
+      if (gallery.style.display === 'none') {
+        gallery.style.display = 'flex';
+        gallery.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        gallery.style.display = 'none';
+      }
+    });
+  </script>
+  
+  
 
   <!-- KONTAKT -->
   <section id="contact" class="contact">
@@ -275,5 +351,7 @@
 
   <script src="/src/script.js"></script>
   <script src="src/js/services.js"></script>
+  <script src="src/js/slider.js"></script>
+  <script src="src/js/navbar.js"></script>
 </body>
 </html>
