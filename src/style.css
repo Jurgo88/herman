@@ -4,6 +4,9 @@
 @import url(css/works.css);
 @import url(css/contact.css);
 @import url(css/services.css);
+@import url(css/navbar.css);
+
+
 
 :root {
     --color1: #A4CD39;
@@ -62,25 +65,3 @@ nav {
     /*************** CONTACT US *****************/
 
 
-    /* Prechod farby */
-.transition-navbar {
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  /* Navbar úplne navrchu - zelený */
-  .navbar-top {
-    background-color: #28a745; /* Bootstrap "success" zelená */
-  }
-  
-  /* Navbar po scrollnutí - biely + tieň */
-  .navbar-scrolled {
-    background-color: #ffffff !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-
-  .header {
-    position: relative;
-    z-index: 1;
-  }
-  
-    

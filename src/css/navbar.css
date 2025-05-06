@@ -1,0 +1,72 @@
+.sticky-top.scrolled  {
+    border: #28a745 solid 2px;
+    background-color: #ffffff !important;
+    height: 90px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 1.3s ease-in-out;
+    transition: 2s;
+  }
+  .sticky-top {
+    transition: all 1.3s ease-in-out;
+  }
+  
+  /* .navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color5);
+  } */
+  
+  .navbar-nav .nav-link {
+    font-size: 1.8rem;
+    color: var(--color5);
+    padding: 10px 20px;
+  }
+
+  .scrolled .navbar-nav .nav-link {
+    color: var(--color4);
+  }
+  nav {
+    transition: all 1.3s ease-in-out;
+  }
+
+  .scrolled nav  {
+    height: 90px;
+    transition: all 1.3s ease-in-out;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background-color: var(--color2);
+    color: var(--color5);
+  }
+
+      /* Prechod farby */
+.transition-navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Navbar úplne navrchu - zelený */
+  .navbar-top {
+    background-color: #28a745; /* Bootstrap "success" zelená */
+  }
+  
+  /* Navbar po scrollnutí - biely + tieň */
+  .navbar-scrolled {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .header {
+    position: relative;
+    z-index: 1;
+  }
+
+  /***************** navbar *****************/
+  .sticky-top{
+    background-color: var(--color4);
+  }
+
+  .logo {
+    height: 100px;
+  }
+    
+ 
