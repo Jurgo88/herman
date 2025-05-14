@@ -9,13 +9,24 @@
 }
 
 .services .service-info {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     padding: 5%;
     visibility: hidden;
     opacity: 0;
     transition: all 0.5s ease-in-out;
 
+}
+
+.service-info li {
+    list-style: outside;
+    margin-bottom: 10px;
+}
+
+.service-info li::marker {
+    color: var(--color2);
+    font-size: 1.5rem;
+    content: "✓ ";
 }
 
 .service-info.hovered {
