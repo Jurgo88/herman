@@ -32,4 +32,17 @@
   .card:hover {
       transform: scale(1.05);
   }
-  
+
+.bazeny {
+    display: none;
+}
+.bazeny.active {
+    display: flex;
+}
+
+.cistky  {
+    display: none;
+}
+.cistky.active {
+    display: flex;
+}
