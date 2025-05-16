@@ -3,6 +3,7 @@
     /* width: 100vw; */
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 .hero .top {
   height: 50vh;

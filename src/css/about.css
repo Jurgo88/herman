@@ -5,7 +5,7 @@
     font-size: 5rem;
     color: black;
     text-align: center;
-    padding: 5%;
+    padding: 5% 0;
     color: var(--color2);
     text-transform: uppercase;
   }
@@ -34,15 +34,16 @@
   }
 
 .bazeny {
-    display: none;
+    display: none !important;
 }
 .bazeny.active {
-    display: flex;
+    display: inline-flex !important;
+    height: 100%;
 }
 
 .cistky  {
-    display: none;
+    display: none !important
 }
 .cistky.active {
-    display: flex;
+    display: flex !important;
 }
