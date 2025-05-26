@@ -1,0 +1,195 @@
+
+
+        /* CSS premenné */
+        :root {
+            --container-bg-color: #333; /* Táto už nebude aktívna kvôli obrázkom */
+            --left-bg-overlay-color: rgba(223, 39, 39, 0.7); /* Prekrytie pre ľavú stranu */
+            --left-button-hover-color: rgba(161, 11, 11, 0.3);
+            --right-bg-overlay-color: rgba(43, 43, 43, 0.8); /* Prekrytie pre pravú stranu */
+            --right-button-hover-color: rgba(92, 92, 92, 0.3);
+            --hover-width: 75%; /* Šírka pri hoveri na desktope */
+            --other-width: 25%; /* Šírka druhej strany na desktope */
+            --speed: 1000ms; /* Rýchlosť animácie */
+        }
+
+        /* Hlavný kontajner */
+        .containerHero {
+            position: relative;
+            width: 100%;
+            height: 100%; /* Odvoláva sa na 100% výšku body/html */
+            background: var(--container-bg-color); /* Záložná farba pozadia */
+            display: flex; /* Používame flexbox pre rozdelenie */
+        }
+
+        /* Spoločné štýly pre obe rozdelené sekcie */
+        .split {
+            position: relative; /* Dôležité pre pseudo-element :before a pre button */
+            width: 50%; /* Predvolene 50% šírky */
+            height: 100%; /* Predvolene 100% výšky */
+            overflow: hidden; /* Skryje obsah, ktorý presahuje */
+            display: flex; /* Pre centrovanie obsahu vo vnútri */
+            justify-content: center; /* Horizontálne centrovanie obsahu */
+            align-items: center; /* Vertikálne centrovanie obsahu */
+            flex-direction: column; /* Obsah bude nad sebou */
+            text-align: center;
+            transition: width var(--speed) ease-in-out; /* Prechody pre zmenu šírky */
+        }
+
+        /* Ľavá sekcia */
+        .split.left {
+            background: url('/src/img/hero.jpeg') center center no-repeat;
+            background-size: cover;
+        }
+
+        /* Pravá sekcia */
+        .split.right {
+            background: url('/src/img/hero2.jpeg') center center no-repeat;
+            background-size: cover;
+        }
+
+        /* Prekrývajúce vrstvy pre vizuálny efekt */
+        .split.left::before,
+        .split.right::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity var(--speed) ease-in-out, background-color var(--speed) ease-in-out;
+            z-index: 1; /* Pod textom a tlačidlami */
+        }
+
+        .split.left::before {
+            background-color: var(--left-bg-overlay-color);
+        }
+
+        .split.right::before {
+            background-color: var(--right-bg-overlay-color);
+        }
+
+        /* Obsah nad prekrývacou vrstvou */
+        .split h1, .split .button {
+            z-index: 2; /* Nad prekrývacou vrstvou */
+            position: relative; /* Aby z-index fungoval */
+        }
+
+        /* Tlačidlo */
+        .button {
+            display: inline-block; /* Pre centrálne zarovnanie vo flexboxe */
+            padding: 1rem 2rem;
+            color: #fff;
+            border: #fff solid 0.2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 2rem; /* Medzi h1 a tlačidlom */
+            transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+
+        .split.left .button:hover {
+            background-color: var(--left-button-hover-color);
+            border-color: var(--left-button-hover-color);
+        }
+
+        .split.right .button:hover {
+            background-color: var(--right-button-hover-color);
+            border-color: var(--right-button-hover-color);
+        }
+
+        /* Hover efekty pre kontajner (pre desktop) */
+        .hover-left .split.left {
+            width: var(--hover-width);
+        }
+
+        .hover-left .split.right {
+            width: var(--other-width);
+        }
+
+        .hover-right .split.right {
+            width: var(--hover-width);
+        }
+
+        .hover-right .split.left {
+            width: var(--other-width);
+        }
+
+        /* Prekrytie opacity pri hoveri na druhej strane pre desktop */
+        .hover-left .split.right::before {
+            opacity: 0.8; /* Zvýrazní prekrytie na zmenšenej strane */
+        }
+
+        .hover-right .split.left::before {
+            opacity: 0.8;
+        }
+
+
+        /* --- RESPONZÍVNY DIZAJN PRE MOBILY --- */
+        @media(max-width: 800px) {
+            /* Zmena kontajnera na vertikálny flexbox */
+            .container {
+                flex-direction: column; /* Položky budú nad sebou */
+            }
+
+            /* Zmena veľkosti split sekcií pre mobil */
+            .split {
+                width: 100%; /* Zaberie celú šírku */
+                height: 50%; /* Zaberie polovicu výšky kontajnera (čo je 100vh) */
+                /* Prechody pre zmenu výšky na mobiloch */
+                transition: height var(--speed) ease-in-out;
+            }
+
+            /* Reset desktopových hover efektov pre šírku */
+            .hover-left .split.left,
+            .hover-left .split.right,
+            .hover-right .split.left,
+            .hover-right .split.right {
+                width: 100%; /* Zruší zmeny šírky */
+            }
+
+            /* NOVÉ HOVER EFEKTY PRE VÝŠKU NA MOBILOCH (ak chceš) */
+            /* Pri dotyku/hoveri sa jedna strana roztiahne vertikálne */
+            .hover-top .split.left { /* 'hover-top' bude nová trieda pre js */
+                height: var(--hover-width); /* Napr. 75% výšky */
+            }
+            .hover-top .split.right {
+                height: var(--other-width); /* Napr. 25% výšky */
+            }
+
+            .hover-bottom .split.right { /* 'hover-bottom' pre js */
+                height: var(--hover-width);
+            }
+            .hover-bottom .split.left {
+                height: var(--other-width);
+            }
+
+            /* Opacity prekrytie pri hoveri na druhej strane pre mobily */
+            .hover-top .split.right::before {
+                opacity: 0.8;
+            }
+            .hover-bottom .split.left::before {
+                opacity: 0.8;
+            }
+
+            /* Úpravy nadpisov a tlačidiel pre menšie obrazovky */
+            h1 {
+                font-size: 2.5rem; /* Upravená veľkosť nadpisu */
+            }
+
+            .button {
+                width: auto; /* Prispôsobí sa obsahu */
+                max-width: 80%; /* Aby nebolo príliš široké */
+                font-size: 0.9rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            /* Úprava tlačidla pre veľmi malé výšky (napr. otočený mobil) */
+            @media(max-height: 700px) {
+                .button {
+                    margin-top: 1rem; /* Zmenší medzeru */
+                    font-size: 0.8rem;
+                    padding: 0.6rem 1.2rem;
+                }
+            }
+        }

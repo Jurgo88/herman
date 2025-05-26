@@ -51,20 +51,46 @@
         </nav>
     </div>
   </header>
-  <section class="hero"> 
+  <!-- <section class="hero"> 
+
+    <div class="container-xl">
+  <div class="split left">
+    <h1>The Designer</h1>
+    <a href="#" class="button">Read More</a>
+  </div>
+  <div class="split right">
+    <h1>The Programmer</h1>
+    <a href="#" class="button">Read More</a>
+  </div>
+</div>
 
     <div class="row">
         <div class="top"><p>Profesionálne <br> čistenie</p></div>
         <div class="bottom"><p>Bazény</p>
     </div>
-  </section>
+  </section> -->
+
+<section class="hero">
+       <div class="containerHero">
+        <div class="split left">
+            <h1>Cistenie</h1>
+            <a href="#onas" class="button">Click</a>
+        </div>
+        <div class="split right">
+            <h1>Bazeny</h1>
+            <a href="#onas" class="button">Click</a>
+        </div>
+    </div>
+</section>
+
+
   <section class="about-us" id="onas">
     <div class="container">
       <h2 class="title">O nás</h2>
-      <p class="cistky active">Naša firma sa zaoberá čistením bazénov a iných vodných plôch. Našim cieľom je poskytnúť našim zákazníkom kvalitné a profesionálne služby.<br><br>
-      Naša firma má dlhoročné skúsenosti v oblasti čistenia a údržby bazénov. Používame moderné technológie a kvalitné čistiace prostriedky, aby sme zabezpečili dokonalé výsledky. Naši zamestnanci sú odborníci v oblasti čistenia bazénov a sú školení na používanie najnovších technológií a postupov. Sme tu pre vás, aby sme vám pomohli udržať váš bazén čistý a zdravý.</p>
+      <p class="cistky active" id="cistky">Naša firma sa zaoberá čistením bazénov a iných vodných plôch. Našim cieľom je poskytnúť našim zákazníkom kvalitné a profesionálne služby.<br><br>
+        Naša firma má dlhoročné skúsenosti v oblasti čistenia a údržby bazénov. Používame moderné technológie a kvalitné čistiace prostriedky, aby sme zabezpečili dokonalé výsledky. Naši zamestnanci sú odborníci v oblasti čistenia bazénov a sú školení na používanie najnovších technológií a postupov. Sme tu pre vás, aby sme vám pomohli udržať váš bazén čistý a zdravý.</p>
       </p>
-      <p class="bazeny">
+      <p class="bazeny" id="bazeny">
         Sme špecialisti na bazény s dlhoročnými skúsenosťami. Zabezpečujeme všetko, čo váš bazén potrebuje – od odbornej montáže, cez pravidelný servis a údržbu, až po dlhodobú starostlivosť o technológiu aj kvalitu vody. Špecializujeme sa na montáž novej bazénovej technológie, vrátane automatických systémov, dávkovačov chémie a moderných riešení pre pohodlnú prevádzku bazéna. Zabezpečujeme kompletný servis bazénovej technológie a čerpadiel, od diagnostiky až po opravy. Vieme vám dodať aj bazénovú chémiu a poradíme so všetkým, čo sa týka starostlivosti o váš bazén. Postaráme sa o to, aby vaša voda bola vždy čistá, bezpečná a bez starostí.
       </p>
       <br>
@@ -245,9 +271,9 @@
             <span class="work-label">Strechy</span>
             <div class="slider-wrapper">
               <div class="slider-container" id="sliderContainer">
-                <img src="public/assets/img/KR_01-01-01-01-01.jpg" alt="Before" class="slider-img">
+                <img src="public/assets/img/KR_02-01-01-01-01.jpg" alt="Before" class="slider-img">
                 <div class="slider-overlay" id="sliderOverlay">
-                  <img src="public/assets/img/KR_02-01-01-01-01.jpg" alt="After" class="slider-img">
+                  <img src="public/assets/img/KR_01-01-01-01-01.jpg" alt="After" class="slider-img">
                 </div>
                 <div class="slider-handle" id="sliderHandle"></div>
               </div>
@@ -334,15 +360,30 @@
       </div>
   
       <!-- Skrytý kontajner na fotky -->
-      <div id="photoGallery" class="row mt-4" style="display: none;">
+      <div id="photoGallery" class="row mt-4 mb-5 pb-5" style="display: none;">
         <!-- Tu budú tvoje fotky -->
-        <div class="col-md-6 mb-3">
+        <div class="col-md-4 mb-3">
           <img src="public/assets/img/FS_01-01.jpg" class="img-fluid rounded" alt="Práca 1">
         </div>
-        <div class="col-md-6 mb-3">
+        <div class="col-md-4 mb-3">
+          <img src="public/assets/img/FS_02-01.jpg" class="img-fluid rounded" alt="Práca 2">
+        </div>
+              <div class="col-md-4 mb-3">
+          <img src="public/assets/img/FS_01-01.jpg" class="img-fluid rounded" alt="Práca 1">
+        </div>
+        <div class="col-md-4 mb-3">
+          <img src="public/assets/img/FS_02-01.jpg" class="img-fluid rounded" alt="Práca 2">
+        </div>
+        <div class="col-md-4 mb-3">
+          <img src="public/assets/img/FS_01-01.jpg" class="img-fluid rounded" alt="Práca 1">
+        </div>
+        <div class="col-md-4 mb-3">
           <img src="public/assets/img/FS_02-01.jpg" class="img-fluid rounded" alt="Práca 2">
         </div>
       </div>
+
+      <div class="p-3"></div>
+      
     </div>
   </section>
 
@@ -350,13 +391,16 @@
     document.getElementById('showGallery').addEventListener('click', function(e) {
       e.preventDefault();
       const gallery = document.getElementById('photoGallery');
+      const otherWorks = document.querySelector('.other-works');
   
       // Zobraz/Skry
       if (gallery.style.display === 'none') {
         gallery.style.display = 'flex';
+        otherWorks.style.height = 'auto'; // Nastaví výšku kontajnera na automatickú
         gallery.scrollIntoView({ behavior: 'smooth' });
       } else {
         gallery.style.display = 'none';
+        otherWorks.style.height = '300px'; // Skryje kontajner
       }
     });
   </script>
@@ -417,16 +461,17 @@
               </div>
             </div>
             <br>
-            <!-- <div class="row">
+            <div class="row">
               <div class="col-md-6">
-                <label for="phone" class="form-label">Telefón</label>
-                <input type="tel" class="form-control" id="phone" name="phone" required>
+                <label for="area" class="form-label">Plocha v m²</label>
+                <input type="text" class="form-control" id="area" name="area" >
               </div>
               <div class="col-md-6">
-                <label for="subject" class="form-label">Predmet</label>
-                <input type="text" class="form-control" id="subject" name="subject" required>
+                <label for="imageUpload" class="form-label">Nahrať obrázky</label>
+                  <input type="file" class="form-control" id="imageUpload" name="images" accept="image/*" multiple>
+                <!-- <div id="areaHelp" class="form-text">Plocha v m²</div> -->
               </div>
-            </div> -->
+            </div>
             <br>
 
             
@@ -463,5 +508,6 @@
   <script type="module" src="src/js/slider.js"></script>
   <script type="module" src="src/js/navbar.js"></script>
   <script type="module" src="src/js/prepinac.js"></script>
+  <script type="module" src="src/js/herohero.js"></script>
 </body>
 </html>

@@ -47,3 +47,6 @@
 .cistky.active {
     display: flex !important;
 }
+.about-us p{
+    display: none;
+}

@@ -5,6 +5,8 @@
 @import url(css/contact.css);
 @import url(css/services.css);
 @import url(css/navbar.css);
+@import url(css/herohero.css);
+/* Compare this snippet from src/css/herohero.css: */
 
 
 
@@ -29,9 +31,7 @@ body, html {
     min-height: 100%;
     font-family: "Space Grotesk", sans-serif;
 }
-nav {
-    border: 2px dashed red;
-  }
+
 
 .container {
     /* box-shadow: 0 4px 8px #0000001a; */
@@ -63,5 +63,4 @@ nav {
 
 
     /*************** CONTACT US *****************/
-
 
