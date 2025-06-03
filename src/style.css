@@ -11,8 +11,8 @@
 
 
 :root {
-    --color1: #A4CD39;
-    --color2: #48B8E9;
+    --color1: rgb(164, 205, 57);
+    --color2: rgb(72, 184, 233);
     --color3: #F5F5F5;
     --color4: #000000;
     --color5: #FFFFFF;
@@ -51,6 +51,28 @@ body, html {
     border: none;
 }
 
+  .title {
+    font-size: 5rem;
+    color: black;
+    text-align: center;
+    padding: 5% 0;
+    color: var(--color2);
+    text-transform: uppercase;
+  }
+
+  /* mobile media query */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    .secondaryButton {
+        font-size: 1.5rem;
+        padding: 5px 15px;
+    }
+    .containerHero {
+        display: inline;
+    }
+}
 
 
 /*************** ABOUT US ***************/

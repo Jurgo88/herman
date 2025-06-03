@@ -3,9 +3,9 @@
         /* CSS premenné */
         :root {
             --container-bg-color: #333; /* Táto už nebude aktívna kvôli obrázkom */
-            --left-bg-overlay-color: rgba(223, 39, 39, 0.7); /* Prekrytie pre ľavú stranu */
+            --left-bg-overlay-color: rgba(164, 205, 57, 0.8); /* Prekrytie pre ľavú stranu */
             --left-button-hover-color: rgba(161, 11, 11, 0.3);
-            --right-bg-overlay-color: rgba(43, 43, 43, 0.8); /* Prekrytie pre pravú stranu */
+            --right-bg-overlay-color: rgba(72, 184, 233, 0.8); /* Prekrytie pre pravú stranu */
             --right-button-hover-color: rgba(92, 92, 92, 0.3);
             --hover-width: 75%; /* Šírka pri hoveri na desktope */
             --other-width: 25%; /* Šírka druhej strany na desktope */

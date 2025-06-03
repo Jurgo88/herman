@@ -1,14 +1,7 @@
 .about-us {
     background-color: aliceblue;
   }
-  .title {
-    font-size: 5rem;
-    color: black;
-    text-align: center;
-    padding: 5% 0;
-    color: var(--color2);
-    text-transform: uppercase;
-  }
+
   .about-us p {
       font-size: 2rem;
       color: black;
@@ -49,4 +42,11 @@
 }
 .about-us p{
     display: none;
+}
+
+@media (max-width: 768px) {
+
+    .about-us {
+        padding-bottom: 60px;
+    }
 }
