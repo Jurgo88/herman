@@ -4,7 +4,7 @@
         :root {
             --container-bg-color: #333; /* Táto už nebude aktívna kvôli obrázkom */
             --left-bg-overlay-color: rgba(164, 205, 57, 0.8); /* Prekrytie pre ľavú stranu */
-            --left-button-hover-color: rgba(161, 11, 11, 0.3);
+            --left-button-hover-color: rgba(213, 226, 204, 0.3);
             --right-bg-overlay-color: rgba(72, 184, 233, 0.8); /* Prekrytie pre pravú stranu */
             --right-button-hover-color: rgba(92, 92, 92, 0.3);
             --hover-width: 75%; /* Šírka pri hoveri na desktope */
@@ -72,6 +72,7 @@
         .split h1, .split .button {
             z-index: 2; /* Nad prekrývacou vrstvou */
             position: relative; /* Aby z-index fungoval */
+            /* font-size: 3rem; */
         }
 
         /* Tlačidlo */
@@ -122,6 +123,14 @@
 
         .hover-right .split.left::before {
             opacity: 0.8;
+        }
+        .hero-title {   
+            font-size: 4.5rem; /* Upravená veľkosť nadpisu */
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Pridanie tieňa pre lepšiu čitateľnosť */
+            margin-bottom: 1rem; /* Medzera pod nadpisom */
+            font-weight: bold;
+            font-family: Space Grotesk, sans-serif;
         }
 
 
