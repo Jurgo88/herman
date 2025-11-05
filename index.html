@@ -21,36 +21,46 @@
 <body>
   <header class="sticky-top">
     <div class="container-lg">
-        <nav class="navbar navbar-expand-lg ">
-            <!-- <img src="img/logo.jpg" alt="logo" class="logo" > -->
-            <a class="navbar-brand" href="#">
-                <img src="public/assets/img/logo_gs.svg" alt="logo" class="logo" >
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Domov </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#onas">O nás</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ourworks">Portfólio </a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" id="publikacie" href="#publikacie-content">Publikácie</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Kontakt</a>
-                    </li>
-                </ul>
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container-lg">
+          <a class="navbar-brand" href="#">
+            <img src="public/assets/img/logo_gs.svg" alt="logo" class="logo">
+          </a>
+      
+          <!-- Tlačidlo pre otvorenie offcanvas -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- OFFCANVAS MENU -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Zavrieť"></button>
             </div>
-        </nav>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Domov</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#onas">O nás</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#ourworks">Portfólio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Kontakt</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
     </div>
-  </header>
+</header>
   <!-- <section class="hero"> 
 
     <div class="container-xl">

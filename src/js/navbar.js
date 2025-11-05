@@ -11,5 +11,20 @@ export function navbar() {
   }
 });
 }
+
+// Kód na automatické zatvorenie Offcanvasu po kliknutí na nav-link
+document.querySelectorAll('#offcanvasNavbar .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+      // Získa inštanciu Offcanvasu pomocou ID
+      const offcanvasElement = document.getElementById('offcanvasNavbar');
+      const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+      
+      // Ak Offcanvas existuje a je otvorený, zatvorí ho
+      if (offcanvas) {
+          offcanvas.hide();
+      }
+  });
+});
+
 navbar();
 
