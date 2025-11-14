@@ -32,6 +32,12 @@ body, html {
     font-family: "Space Grotesk", sans-serif;
 }
 
+p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
 
 .container {
     /* box-shadow: 0 4px 8px #0000001a; */

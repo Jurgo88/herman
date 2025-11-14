@@ -19,7 +19,7 @@
 
 </head>
 <body>
-  <header class="sticky-top">
+  <header class="sticky-top" style="display: none;">
     <div class="container-lg">
       <nav class="navbar navbar-expand-lg ">
         <div class="container-lg">
@@ -84,29 +84,157 @@
        <div class="containerHero">
         <div class="split left">
             <h1 class="hero-title">Čistenie</h1>
-            <a href="#onas" class="button">Zobraziť viac</a>
+            <a href="#ourworks" class="button">Zobraziť viac</a>
+        </div>
+        <div class="center-line">
+            <div class="or-circle">&NonBreakingSpace;</div>
         </div>
         <div class="split right">
-            <h1 class="hero-title" >Bazény</h1>
-            <a href="#onas" class="button">Zobraziť viac</a>
+            <h1 class="hero-title">Bazény</h1>
+            <a href="#ourworks" class="button">Zobraziť viac</a>
         </div>
     </div>
 </section>
 
+<section class="our-works" id="ourworks">
+  <div class="container">
+    <h2 class="title" style="display: none;">Naše práce</h2>
+    <div class="row">
+      <div class="col-12">
+        <p>Zaoberáme sa čistením rodinných domov, bytových domov, firemných budov, premyselných budov a historických objektov.</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <!-- <div class="work-item">
+          <span class="work-label">Dlažby</span>
+          <div class="circle">
+            <span class="label before">Predtým</span>
+            <span class="label after">Potom</span>
+            <img src="public/assets/img/DL_01-01.jpg" class="half bottom-right" alt="">
+            <img src="public/assets/img/DL_02-01.jpg" class="half top-left" alt="">
+          </div>
+          <br>
+        </div> -->
 
-  <section class="about-us" id="onas">
-    <div class="container">
-      <h2 class="title">O nás</h2>
-      <p class="cistky active" id="cistky">Naša firma sa zaoberá čistením bazénov a iných vodných plôch. Našim cieľom je poskytnúť našim zákazníkom kvalitné a profesionálne služby.<br><br>
-        Naša firma má dlhoročné skúsenosti v oblasti čistenia a údržby bazénov. Používame moderné technológie a kvalitné čistiace prostriedky, aby sme zabezpečili dokonalé výsledky. Naši zamestnanci sú odborníci v oblasti čistenia bazénov a sú školení na používanie najnovších technológií a postupov. Sme tu pre vás, aby sme vám pomohli udržať váš bazén čistý a zdravý.</p>
+        <div class="work-item">
+          <span class="work-label">Dlažby</span>
+          <div class="slider-wrapper">
+            <div class="slider-container" >
+              <img src="public/assets/img/DL_01-01.jpg" alt="Before" class="slider-img">
+              <div class="slider-overlay" >
+                <img src="public/assets/img/DL_02-01.jpg" alt="After" class="slider-img">
+              </div>
+              <div class="slider-handle" ></div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-12 col-md-4">
+        <!-- <div class="work-item">
+          <span class="work-label">Strechy</span>
+          <div class="circle">
+            <img src="public/assets/img/KR_01-01-01-01-01.jpg" class="half top-left" alt="">
+            <img src="public/assets/img/KR_02-01-01-01-01.jpg" class="half bottom-right" alt="">
+            <svg class="circle-text" viewBox="0 0 300 300">
+              <defs>
+                <path id="textPathCircle" d="M 150,150 m -140,0 a 140,140 0 1,1 280,0 a 140,140 0 1,1 -280,0" />
+              </defs>
+              <text font-size="26" fill="black" text-anchor="start">
+                <textPath href="#textPathCircle" startOffset="10%">
+                  Predtým
+                </textPath>
+                <textPath href="#textPathCircle" startOffset="60%">
+                  Potom
+                </textPath>
+              </text>
+            </svg>
+          </div>
+          <br>
+        </div> -->
+
+        <div class="work-item">
+          <span class="work-label">Strechy</span>
+          <div class="slider-wrapper">
+            <div class="slider-container" id="sliderContainer">
+              <img src="public/assets/img/KR_02-01-01-01-01.jpg" alt="Before" class="slider-img">
+              <div class="slider-overlay" id="sliderOverlay">
+                <img src="public/assets/img/KR_01-01-01-01-01.jpg" alt="After" class="slider-img">
+              </div>
+              <div class="slider-handle" id="sliderHandle"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="work-item">
+          <span class="work-label">Fasády</span>
+          <div class="slider-wrapper">
+            <div class="slider-container" id="sliderContainer">
+              <img src="public/assets/img/FS_01-01.jpg" alt="Before" class="slider-img">
+              <div class="slider-overlay" id="sliderOverlay">
+                <img src="public/assets/img/FS_02-01.jpg" alt="After" class="slider-img">
+              </div>
+              <div class="slider-handle" id="sliderHandle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script>
+      const sliderContainer = document.getElementById('sliderContainer');
+      const sliderOverlay = document.getElementById('sliderOverlay');
+      const sliderHandle = document.getElementById('sliderHandle');
+    
+      function updateSlider(x) {
+        const rect = sliderContainer.getBoundingClientRect();
+        let offsetX = x - rect.left;
+        offsetX = Math.max(0, Math.min(offsetX, rect.width));
+    
+        const percent = (offsetX / rect.width) * 100;
+        sliderOverlay.style.width = `${percent}%`;
+        sliderHandle.style.left = `${percent}%`;
+      }
+    
+      // Desktop - myš
+      sliderContainer.addEventListener('mousemove', (e) => {
+        if (e.buttons !== 1) return; // len keď je stlačené tlačidlo myši
+        updateSlider(e.clientX);
+      });
+    
+      sliderContainer.addEventListener('mousedown', (e) => {
+        updateSlider(e.clientX);
+      });
+    
+      // Mobil - dotyk
+      sliderContainer.addEventListener('touchstart', (e) => {
+        updateSlider(e.touches[0].clientX);
+      });
+    
+      sliderContainer.addEventListener('touchmove', (e) => {
+        updateSlider(e.touches[0].clientX);
+      });
+    </script> -->
+
+    <div class="work-gallery">
+      <h3>Ďalej čistíme</h3>
+      <br>
+      <p>
+        okná a okenné rámy, ploty a brány, terasy a balkóny, bazény a vírivky,
+        sochy a pamätníky, kameniny a betónové prvky, odstraňovanie graffiti
       </p>
-      <p class="bazeny" id="bazeny">
-        Sme špecialisti na bazény s dlhoročnými skúsenosťami. Zabezpečujeme všetko, čo váš bazén potrebuje – od odbornej montáže, cez pravidelný servis a údržbu, až po dlhodobú starostlivosť o technológiu aj kvalitu vody. Špecializujeme sa na montáž novej bazénovej technológie, vrátane automatických systémov, dávkovačov chémie a moderných riešení pre pohodlnú prevádzku bazéna. Zabezpečujeme kompletný servis bazénovej technológie a čerpadiel, od diagnostiky až po opravy. Vieme vám dodať aj bazénovú chémiu a poradíme so všetkým, čo sa týka starostlivosti o váš bazén. Postaráme sa o to, aby vaša voda bola vždy čistá, bezpečná a bez starostí.
-      </p>
+      <br>
       <br>
       <br>
     </div>
-  </section>
+
+
+  </div>
+
+
+</section>
+
   <section class="services">
     <div class="container">
       <h2 class="title">Pri práci používame</h2>
@@ -223,142 +351,24 @@
     </div>
   </section>
   
-
-  <section class="our-works" id="ourworks">
+  <section class="about-us" id="onas">
     <div class="container">
-      <h2 class="title">Naše práce</h2>
-      <div class="row">
-        <div class="col-12 col-md-4">
-          <!-- <div class="work-item">
-            <span class="work-label">Dlažby</span>
-            <div class="circle">
-              <span class="label before">Predtým</span>
-              <span class="label after">Potom</span>
-              <img src="public/assets/img/DL_01-01.jpg" class="half bottom-right" alt="">
-              <img src="public/assets/img/DL_02-01.jpg" class="half top-left" alt="">
-            </div>
-            <br>
-          </div> -->
+      <h2 class="title">O nás</h2>
+      <p class="cistky active" id="cistky">
+        Naša firma sa zaoberá čistením rôznych exteriérových plôch a povrchov. Naším cieľom je poskytovať zákazníkom kvalitné a profesionálne služby. Čistíme súkromné aj verejné priestory.<br>
+        Používame moderné technológie a kvalitné čistiace prostriedky, aby sme dosiahli dokonalé výsledky. Naši zamestnanci sú odborníci v oblasti čistenia a pravidelne sa školia v používaní najnovších technológií a postupov.<br>
+        Sme tu pre vás, aby sme vám pomohli udržať váš majetok a nehnuteľnosti v dokonalej čistote.
 
-          <div class="work-item">
-            <span class="work-label">Dlažby</span>
-            <div class="slider-wrapper">
-              <div class="slider-container" >
-                <img src="public/assets/img/DL_01-01.jpg" alt="Before" class="slider-img">
-                <div class="slider-overlay" >
-                  <img src="public/assets/img/DL_02-01.jpg" alt="After" class="slider-img">
-                </div>
-                <div class="slider-handle" ></div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        <div class="col-12 col-md-4">
-          <!-- <div class="work-item">
-            <span class="work-label">Strechy</span>
-            <div class="circle">
-              <img src="public/assets/img/KR_01-01-01-01-01.jpg" class="half top-left" alt="">
-              <img src="public/assets/img/KR_02-01-01-01-01.jpg" class="half bottom-right" alt="">
-              <svg class="circle-text" viewBox="0 0 300 300">
-                <defs>
-                  <path id="textPathCircle" d="M 150,150 m -140,0 a 140,140 0 1,1 280,0 a 140,140 0 1,1 -280,0" />
-                </defs>
-                <text font-size="26" fill="black" text-anchor="start">
-                  <textPath href="#textPathCircle" startOffset="10%">
-                    Predtým
-                  </textPath>
-                  <textPath href="#textPathCircle" startOffset="60%">
-                    Potom
-                  </textPath>
-                </text>
-              </svg>
-            </div>
-            <br>
-          </div> -->
-
-          <div class="work-item">
-            <span class="work-label">Strechy</span>
-            <div class="slider-wrapper">
-              <div class="slider-container" id="sliderContainer">
-                <img src="public/assets/img/KR_02-01-01-01-01.jpg" alt="Before" class="slider-img">
-                <div class="slider-overlay" id="sliderOverlay">
-                  <img src="public/assets/img/KR_01-01-01-01-01.jpg" alt="After" class="slider-img">
-                </div>
-                <div class="slider-handle" id="sliderHandle"></div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
-          <div class="work-item">
-            <span class="work-label">Fasády</span>
-            <div class="slider-wrapper">
-              <div class="slider-container" id="sliderContainer">
-                <img src="public/assets/img/FS_01-01.jpg" alt="Before" class="slider-img">
-                <div class="slider-overlay" id="sliderOverlay">
-                  <img src="public/assets/img/FS_02-01.jpg" alt="After" class="slider-img">
-                </div>
-                <div class="slider-handle" id="sliderHandle"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <script>
-        const sliderContainer = document.getElementById('sliderContainer');
-        const sliderOverlay = document.getElementById('sliderOverlay');
-        const sliderHandle = document.getElementById('sliderHandle');
-      
-        function updateSlider(x) {
-          const rect = sliderContainer.getBoundingClientRect();
-          let offsetX = x - rect.left;
-          offsetX = Math.max(0, Math.min(offsetX, rect.width));
-      
-          const percent = (offsetX / rect.width) * 100;
-          sliderOverlay.style.width = `${percent}%`;
-          sliderHandle.style.left = `${percent}%`;
-        }
-      
-        // Desktop - myš
-        sliderContainer.addEventListener('mousemove', (e) => {
-          if (e.buttons !== 1) return; // len keď je stlačené tlačidlo myši
-          updateSlider(e.clientX);
-        });
-      
-        sliderContainer.addEventListener('mousedown', (e) => {
-          updateSlider(e.clientX);
-        });
-      
-        // Mobil - dotyk
-        sliderContainer.addEventListener('touchstart', (e) => {
-          updateSlider(e.touches[0].clientX);
-        });
-      
-        sliderContainer.addEventListener('touchmove', (e) => {
-          updateSlider(e.touches[0].clientX);
-        });
-      </script> -->
-
-      <div class="work-gallery">
-        <h3>Ďalej čistíme</h3>
-        <br>
-        <p>
-          okná a okenné rámy, ploty a brány, terasy a balkóny, bazény a vírivky,
-          sochy a pamätníky, kameniny a betónové prvky, odstraňovanie graffiti
-        </p>
-        <br>
-        <br>
-        <br>
-      </div>
-  
-
+       </p>
+      <p class="bazeny" id="bazeny">
+        Sme špecialisti na bazény s dlhoročnými skúsenosťami. Zabezpečujeme všetko, čo váš bazén potrebuje – od odbornej montáže, cez pravidelný servis a údržbu, až po dlhodobú starostlivosť o technológiu aj kvalitu vody. Špecializujeme sa na montáž novej bazénovej technológie, vrátane automatických systémov, dávkovačov chémie a moderných riešení pre pohodlnú prevádzku bazéna. Zabezpečujeme kompletný servis bazénovej technológie a čerpadiel, od diagnostiky až po opravy. Vieme vám dodať aj bazénovú chémiu a poradíme so všetkým, čo sa týka starostlivosti o váš bazén. Postaráme sa o to, aby vaša voda bola vždy čistá, bezpečná a bez starostí.
+      </p>
+      <br>
+      <br>
     </div>
-
-
   </section>
+
+
 
   <section class="other-works">
     <!-- <div class="container">

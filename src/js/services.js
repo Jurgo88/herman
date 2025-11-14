@@ -42,4 +42,19 @@ $(".card").hover(
     }
 );
 
+// If mobile version then hovered class is allways added
+if (window.innerWidth <= 768) {
+    // console.log("Mobile version detected");
+    $(".card").each(function () {
+        $(this).addClass("hovered");
+        $(this).parent().find(".service-info").addClass("hovered");
+    });
+} else {
+
+    $(".card").each(function () {
+        $(this).removeClass("hovered");
+        $(this).parent().find(".service-info").removeClass("hovered");
+    });
+}
+
 
