@@ -93,5 +93,34 @@
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
   
+  .navbar-toggler{
+    background: #28a745;
+  }
+
+  .btn-close{
+    filter: invert(1);
+    background-color: #fff !important;
+  }
+  
+
+
+.offcanvas, .offcanvas-header, .offcanvas-body  {
+    color: var(--color5);
+    background-color: var(--color4) !important;
+  }
+
+  .offcanvas-header {
+    border-left: #fff 1px solid;
+    border-top: #fff 1px solid;
+  }
+  .offcanvas-body {
+    border-left: #fff 1px solid;
+  }
+
+  .scrolled .offcanvas .nav-link, .scrolled .offcanvas-header, .scrolled .offcanvas-body  {
+    color: #000000;
+    background-color: #FFFFFF !important;
+    /* background-color: aquamarine !important; */
+  }
     
  
