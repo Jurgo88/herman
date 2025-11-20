@@ -105,17 +105,17 @@
         flex-wrap: wrap;
         gap: 20px;
     }
-    .work-gallery img {
+    /* .work-gallery img {
         width: 300px;
         height: 300px;
         border-radius: 50%;
         object-fit: cover;
         transition: transform 0.3s ease-in-out;
-    }
+    } */
 
     /************* Toto uz budu nejake picoviny *************/
 
-    .work-gallery img:hover {
+    /* .work-gallery img:hover {
         transform: scale(1.1);
     }
     .work-gallery img:active {
@@ -140,7 +140,7 @@
         font-size: 1.5rem;
         text-align: center;
         margin-top: 10px;
-    } 
+    }  */
 
 
     .slider-wrapper {

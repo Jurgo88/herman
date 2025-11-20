@@ -1,0 +1,66 @@
+.yt-gallery {
+    margin-top: 1rem; 
+}
+
+.yt-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* presne 3 stĺpce */
+    gap: 12px; 
+}
+
+.yt-item { 
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 8px; 
+    background: #000; 
+    display: block; 
+    height: 300px;
+}
+
+.yt-item img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.yt-play { 
+    position: absolute; 
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%); 
+    font-size: 28px; 
+    color: rgba(255,255,255,0.95); 
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6); 
+    pointer-events: none; 
+}
+
+.yt-label { 
+    position: absolute; 
+    left: 6px; 
+    bottom: 6px; 
+    padding: 4px 6px; 
+    background: rgba(0,0,0,0.6); 
+    color: #fff; 
+    font-size: 12px; 
+    border-radius: 4px; 
+}
+
+.yt-more { 
+    margin-top: 8px; 
+}
+
+.yt-more a { 
+    color: #0d6efd; 
+    text-decoration: none; 
+}
+
+/* Mobilná verzia */
+@media (max-width: 600px) {
+    .yt-grid {
+        grid-template-columns: 1fr; /* položky pod sebou */
+    }
+    .yt-play { 
+        font-size: 22px; 
+    }
+}
