@@ -1,29 +1,20 @@
 .sticky-top.scrolled  {
-    border: #28a745 solid 2px;
     background-color: #ffffff !important;
     /* height: 90px; */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: all 1.3s ease-in-out;
-    transition: 2s;
   }
   .sticky-top {
     transition: all 1.3s ease-in-out;
   }
   
-  /* .navbar-brand {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--color5);
-  } */
   
   .navbar-nav .nav-link {
     font-size: 1.8rem;
     color: var(--color5);
     padding: 10px 20px;
   }
-   .nav-link:not(.scrolled)  {
-    /* background-color: var(--color2); */
-  }
+  
   .offset.nav-link {
     color: var(--color5);
     background-color: #28a745 !important; 
@@ -40,12 +31,10 @@
   }
 
   .scrolled nav  {
-    /* height: 90px; */
     transition: all 1.3s ease-in-out;
   }
   
   .navbar-nav .nav-link:hover {
-    /* background-color: var(--color2); */
     color: var(--color2);
   }
 
@@ -104,7 +93,7 @@
   
 
 
-.offcanvas, .offcanvas-header, .offcanvas-body  {
+.show.offcanvas, .show.offcanvas-header, .show.offcanvas-body  {
     color: var(--color5);
     background-color: var(--color4) !important;
   }
@@ -113,11 +102,11 @@
     border-left: #fff 1px solid;
     border-top: #fff 1px solid;
   }
-  .offcanvas-body {
+  .show .offcanvas-body {
     border-left: #fff 1px solid;
   }
 
-  .scrolled .offcanvas .nav-link, .scrolled .offcanvas-header, .scrolled .offcanvas-body  {
+  .scrolled .show .offcanvas .nav-link, .scrolled .show .offcanvas-header, .scrolled .show .offcanvas-body  {
     color: #000000;
     background-color: #FFFFFF !important;
     /* background-color: aquamarine !important; */

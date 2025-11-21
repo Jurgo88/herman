@@ -1,0 +1,67 @@
+/* Základný štýl pre kontajner odkazov */
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+/* Základný štýl pre odkazy (ikony) */
+.social-link {
+text-decoration: none;
+color: #333;
+font-size: 30px;  /* väčšie ikony */
+transition: all 0.3s ease;  /* hladká animácia */
+display: inline-block;
+}
+
+/* Efekt na hover */
+.social-link:hover {
+color: #0077b5; /* Zmena farby pri hover (napr. LinkedIn má #0077b5) */
+transform: scale(1.2);  /* Jemný zväčšovací efekt pri hover */
+text-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Tieň textu */
+}
+
+/* Efekt na hover pre ostatné linky (rozmazanie) */
+.social-links:hover .social-link:not(:hover) {
+    filter: blur(4px);  /* Rozmazanie neaktívnych odkazov */
+}
+  
+  /* Štýl pre jednotlivé ikony (možno prispôsobiť farby podľa sociálnych sietí) */
+  .social-link i {
+    transition: transform 0.3s ease, color 0.3s ease; /* Efekty pre ikony */
+}
+
+/* Farby pre jednotlivé sociálne siete */
+.social-link:nth-child(1) i { color: #3b5998; }  /* Facebook */
+.social-link:nth-child(2) i { color: #E4405F; }  /* Instagram */
+.social-link:nth-child(3) i { color: #FF0000; }  /* YouTube */
+.social-link:nth-child(4) i { color: #000000; }  /* TikTok */
+  
+  /* Efekt na hover pre jednotlivé ikony */
+.social-link:hover i {
+    transform: rotate(360deg); /* Rotácia ikony pri hover */
+    transition: transform 0.8s ease;
+}
+
+@media (max-width: 768px) {
+    .social-link span { 
+      display: none;  /* Skryje text */
+    }
+    
+    .social-link i {
+      font-size: 40px;  /* Väčšie ikony pre mobilnú verziu */
+    }
+  }
+
+@media(max-width: 992px) {
+    .social-link span { 
+      font-size: 1rem;
+    }
+}
+@media(max-width: 1200px) {
+    .social-link span { 
+      font-size: 1.5rem;
+    }
+}
+  
