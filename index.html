@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="preload" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/fc3a6f972f.js" crossorigin="anonymous" async></script>
 
     <link rel="icon" type="image/x-icon" href="public/assets/img/favicon.ico">
@@ -226,16 +226,25 @@
     </script> -->
 
     <div class="work-gallery">
-      <h3>Ďalej čistíme</h3>
+      <h3 style="width: 100%;">Ďalej čistíme</h3>
+      <span class="toggle-arrow" style="cursor: pointer;"><div class="arrow-down"></div></span>
       <br>
-      <p>
+      <p class="toggle-paragraph">
         okná a okenné rámy, ploty a brány, terasy a balkóny, bazény a vírivky,
         sochy a pamätníky, kameniny a betónové prvky, odstraňovanie graffiti
       </p>
-      <br>
+      <script>
+        document.querySelector('.toggle-arrow').addEventListener('click', function () {
+          const paragraph = this.nextElementSibling.nextElementSibling;
+          const isVisible = paragraph.classList.contains('visible');
+          paragraph.classList.toggle('visible', !isVisible);
+          this.innerHTML = isVisible ? '<div class="arrow-down"></div>' : '-';
+        });
+      </script>
       <br>
       <br>
 
+      <div id="ytGallery" class="yt-gallery">
       <div id="ytGallery" class="yt-gallery">
         <h3>Videá</h3>
         <br>
@@ -548,6 +557,16 @@
 
 
   </section>
+
+  <footer>
+    <p  class="thisYear"></p>
+</footer>
+<script>
+    const yearElement = document.querySelector('.thisYear');
+    const currentYear = new Date().getFullYear();
+    yearElement.innerHTML = `&copy; ${currentYear} &nbsp; &nbsp; Design by <a href="https://www.peterzigo.sk">Peter Zigo</a> &NonBreakingSpace; &nbsp; Created by <a
+            href="https://www.jurgo.sk">Jurgo</a>`;
+</script>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

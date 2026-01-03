@@ -202,3 +202,49 @@
         gap: 20px; */
         height: 300px;
     }
+
+    .toggle-arrow {
+        font-size: 2rem;
+        color: var(--color2);
+        margin-left: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+
+ .arrow-down {
+  height:0px;
+  width:0px;
+  border:none;
+  border-top:25px solid #000000;
+  border-left:55px solid rgba(0,0,0,0);
+  border-right:55px solid rgba(0,0,0,0);
+}
+.arrow-up {
+  height:0px;
+  width:0px;
+  border:none;
+  border-bottom:25px solid #000000;
+  border-left:55px solid rgba(0,0,0,0);
+  border-right:55px solid rgba(0,0,0,0);
+}
+
+
+    .toggle-arrow:hover {
+        transform: scale(1.2);
+    }
+    /* .work-gallery p {
+        transition: visibility 2.3s ease-in-out, height 2.3s ease-in-out;
+    } */
+
+    .toggle-paragraph {
+      visibility: hidden;
+      height: 0;
+      opacity: 0;
+      transition: visibility 3s, height 1.3s ease, opacity 1.3s ease;
+    }
+  
+    .toggle-paragraph.visible {
+      visibility: visible;
+      height: auto;
+      opacity: 1;
+    }

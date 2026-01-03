@@ -24,6 +24,8 @@ $(document).ready(function() {
         $('.bazeny').removeClass('active');
         $('.services h2').text('Pri práci používame');
         showSections();
+        // Scroll to the "ourworks" section smoothly
+        document.getElementById('ourworks').scrollIntoView({ behavior: 'smooth' });
     });
 });
 
@@ -41,6 +43,8 @@ function showSections() {
     section.style.display = 'block';
   });
   $('.sticky-top').show();
+  //footer show
+  document.querySelector('footer').style.display = 'block';
 }
 
 
