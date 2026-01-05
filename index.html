@@ -188,9 +188,40 @@
           </div>
         </div>
       </div>
+      <div class="container">
+
+        <div class="col-12 other-works">
+          <br>
+          <h3 style="width: 100%; text-align: center;">Ďalej čistíme</h3>
+          <span class="toggle-arrow" style="cursor: pointer;"><div class="arrow-down"></div></span>
+          <br>
+          <p class="toggle-paragraph">
+            okná a okenné rámy, ploty a brány, terasy a balkóny, bazény a vírivky,
+            sochy a pamätníky, kameniny a betónové prvky, odstraňovanie graffiti
+          </p>
+          <script>
+            document.querySelector('.toggle-arrow').addEventListener('click', function () {
+              const paragraph = this.nextElementSibling.nextElementSibling;
+              const isVisible = paragraph.classList.contains('visible');
+              paragraph.classList.toggle('visible', !isVisible);
+              this.innerHTML = isVisible ? '<div class="arrow-down"></div>' : '-';
+            });
+          </script>
+          <br>
+          <br>
+        </div>
+
+      </div>
+
+
+
     </div>
 
     <div class="row" id="works-bazeny" style="display: none;" >
+
+      <div class="col-12">
+        <p>Zaoberáme sa komplexnou údržbou, montážou, poradenstvom a návrhom technológií pre bazény</p>
+      </div>
 
       <div class="col-12 col-md-4">
         <div class="work-item">
@@ -276,31 +307,15 @@
     </script> -->
 
     <div class="work-gallery">
-      <h3 style="width: 100%;">Ďalej čistíme</h3>
-      <span class="toggle-arrow" style="cursor: pointer;"><div class="arrow-down"></div></span>
-      <br>
-      <p class="toggle-paragraph">
-        okná a okenné rámy, ploty a brány, terasy a balkóny, bazény a vírivky,
-        sochy a pamätníky, kameniny a betónové prvky, odstraňovanie graffiti
-      </p>
-      <script>
-        document.querySelector('.toggle-arrow').addEventListener('click', function () {
-          const paragraph = this.nextElementSibling.nextElementSibling;
-          const isVisible = paragraph.classList.contains('visible');
-          paragraph.classList.toggle('visible', !isVisible);
-          this.innerHTML = isVisible ? '<div class="arrow-down"></div>' : '-';
-        });
-      </script>
-      <br>
-      <br>
+
 
       <div id="ytGallery" class="yt-gallery">
       <div id="ytGallery" class="yt-gallery">
         <h3>Videá</h3>
         <br>
         <div class="yt-grid"></div>
-        <div class="yt-more">
-          <a href="https://www.youtube.com/@GREENSTAR_SK/videos" target="_blank" rel="noopener">Zobraziť všetky videá na YouTube</a>
+        <div class="yt-more button secondaryButton">
+          <a href="https://www.youtube.com/@GREENSTAR_SK/videos" target="_blank" rel="noopener" class="">Zobraziť všetky videá na YouTube</a>
         </div>
       </div>
 

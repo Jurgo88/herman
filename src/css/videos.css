@@ -47,20 +47,26 @@
 }
 
 .yt-more { 
-    margin-top: 8px; 
+    margin-top: 2rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem !important;
 }
 
 .yt-more a { 
-    color: #0d6efd; 
+    color: #ffffff; 
     text-decoration: none; 
 }
 
 /* Mobilná verzia */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .yt-grid {
         grid-template-columns: 1fr; /* položky pod sebou */
     }
     .yt-play { 
         font-size: 22px; 
+    }
+    .yt-more {
+        width: 100%;
     }
 }
