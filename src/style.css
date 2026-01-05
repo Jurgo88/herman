@@ -69,7 +69,15 @@ p {
     text-transform: uppercase;
   }
 
-  /* mobile media query */
+.circle-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+/* mobile media query */
 @media (max-width: 768px) {
     .title {
         font-size: 3rem;

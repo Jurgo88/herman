@@ -10,6 +10,9 @@ $(document).ready(function() {
         $('.cistky').removeClass('active');
         $('.services h2').text('Ponúkame');
         showSections();
+        $('#works-bazeny').show();        
+        $('#works-cistky').hide();
+
         // Scroll to the "ourworks" section smoothly
         document.getElementById('ourworks').scrollIntoView({ behavior: 'smooth' });
     });
@@ -24,6 +27,8 @@ $(document).ready(function() {
         $('.bazeny').removeClass('active');
         $('.services h2').text('Pri práci používame');
         showSections();
+        $('#works-cistky').show();
+        $('#works-bazeny').hide();
         // Scroll to the "ourworks" section smoothly
         document.getElementById('ourworks').scrollIntoView({ behavior: 'smooth' });
     });
