@@ -68,5 +68,13 @@
     }
     .yt-more {
         width: 100%;
+        margin-top: 1.5rem; /* Adjust spacing for mobile */
+        margin-left: 0;
+        transform: none; /* Remove centering transform */
+        text-align: center; /* Center text for mobile */
+    }
+
+    .button{
+        max-width: none;
     }
 }
