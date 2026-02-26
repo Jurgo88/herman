@@ -1,0 +1,83 @@
+/* =============================
+   LASER PAGE
+============================= */
+
+.laser-hero {
+  position: relative;
+  height: 85vh;
+  background: url("../public/assets/img/billboard.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.laser-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.laser-title {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: white;
+}
+
+.laser-subtitle {
+  font-size: 1.3rem;
+  color: #39d353;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+
+/* BENEFITS */
+
+.laser-benefits {
+  background: #0f141b;
+  padding: 80px 0;
+  color: white;
+}
+
+.benefit-item {
+  font-weight: 700;
+  color: #39d353;
+  font-size: 1.3rem;
+  margin: 10px 20px;
+}
+
+
+/* WORK */
+
+.laser-work {
+  padding: 80px 0;
+  background: #0b0f14;
+  color: white;
+}
+
+.work-card {
+  height: 220px;
+  background: #1a1f27;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  background: #222a35;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .laser-title {
+    font-size: 2.3rem;
+  }
+}
