@@ -59,6 +59,9 @@
                   <a class="nav-link" href="#ourworks">Portfólio</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="/laserove-cistenie.html">Čistenie laserom</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="#contact">Kontakt</a>
                 </li>
               </ul>
@@ -648,9 +651,28 @@
   <script type="module" src="src/js/slider.js"></script>
   <script type="module" src="src/js/navbar.js"></script>
   <script type="module" src="src/js/stickyNavbar.js"></script>
-
   <script type="module" src="src/js/prepinac.js"></script>
   <script type="module" src="src/js/herohero.js"></script>
   <script type="module" src="src/js/videos.js"></script>
+  <script src="src/js/cookies.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    palette: {
+      popup: { background: "#000" },
+      button: { background: "#f1d600" }
+    },
+    content: {
+      message: "Táto stránka používa cookies.",
+      dismiss: "OK",
+      link: "Viac info",
+      href: "/cookies"
+    }
+  })
+});
+</script>
+
 </body>
 </html>
