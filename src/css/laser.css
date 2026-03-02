@@ -9,7 +9,7 @@ body {
 .laser-hero {
   position: relative;
   min-height: 48vh;
-  background: url("../public/assets/img/billboard.webp") center/cover no-repeat;
+  background: url("/public/assets/img/billboard.webp") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
