@@ -13,33 +13,58 @@
     font-size: 1.5rem;
     font-weight: 700;
     padding: 5%;
-    visibility: hidden;
     opacity: 0;
-    transition: all 0.5s ease-in-out;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
 
+.service-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .service-info li {
-    list-style: outside;
-    margin-bottom: 10px;
+    position: relative;
+    margin-bottom: 0.75rem;
+    padding-left: 1.8rem;
 }
 
-.service-info li::marker {
+.service-info li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
     color: var(--color2);
     font-size: 1.5rem;
-    content: "✓ ";
+    line-height: 1;
 }
 
-.service-info.hovered {
-    transition: all 1.5s ease-in-out;
-    visibility: visible;
+.services .row > [class*="col-"] {
+    position: relative;
+}
+
+.services .row > [class*="col-"]:hover .service-info,
+.services .row > [class*="col-"]:focus-within .service-info,
+.services .row > [class*="col-"].is-hovered .service-info,
+.services .service-info.hovered {
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 @media (max-width: 768px) {
     .services .service-info {
         font-size: 1.2rem;
         padding: 3%;
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .services .service-info {
+        opacity: 1;
         visibility: visible;
+        transform: none;
     }
 }

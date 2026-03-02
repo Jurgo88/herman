@@ -1,60 +1,34 @@
-console.log("services.js loaded");
+const servicesSection = document.querySelector(".services");
 
-document.onload = function () {
-    console.log("Page loaded");
-    // Získanie všetkých elementov s triedou "card"
-    const cards = document.querySelectorAll(".card");
-
-    // Pre každý element s triedou "card" pridať event listener
-    cards.forEach((card) => {
-        card.addEventListener("mouseenter", function () {
-            this.classList.add("hovered");
-            console.log("Card hovered:", this);
-        });
-        card.addEventListener("mouseleave", function () {
-            this.classList.remove("hovered");
-            console.log("Card unhovered:", this);
-        });
-    });
-};
-// Pridanie hover efektu na všetky karty
-$(".card").hover(
-    function () {
-        $(this).addClass("hovered");
-        $(this).parent().find(".service-info").addClass("hovered");
-        console.log("Card hovered:", this);
-    },
-    function () {
-        $(this).removeClass("hovered");
-        $(this).parent().find(".service-info").removeClass("hovered");
-        console.log("Card unhovered:", this);
+function toggleColumnHover(column, isHovered) {
+    if (isHovered) {
+        column.classList.add("is-hovered");
+    } else {
+        column.classList.remove("is-hovered");
     }
-);
-// Pridanie hover efektu na obsah a obrázok karty
-$(".card").hover(
-    function () {
-        $(this).find(".service-info").addClass("hovered");
-        $(this).find(".card__image").addClass("card__image--hovered");
-    },
-    function () {
-        $(this).find("service-info").removeClass("hovered");
-        $(this).find(".card__image").removeClass("card__image--hovered");
+}
+
+function setupServiceHover() {
+    if (!servicesSection) {
+        return;
     }
-);
 
-// If mobile version then hovered class is allways added
-if (window.innerWidth <= 768) {
-    // console.log("Mobile version detected");
-    $(".card").each(function () {
-        $(this).addClass("hovered");
-        $(this).parent().find(".service-info").addClass("hovered");
-    });
-} else {
+    const columns = servicesSection.querySelectorAll(".row > [class*='col-']");
+    const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
-    $(".card").each(function () {
-        $(this).removeClass("hovered");
-        $(this).parent().find(".service-info").removeClass("hovered");
+    columns.forEach((column) => {
+        if (isTouch) {
+            toggleColumnHover(column, true);
+            return;
+        }
+
+        column.addEventListener("mouseenter", () => toggleColumnHover(column, true));
+        column.addEventListener("mouseleave", () => toggleColumnHover(column, false));
+        column.addEventListener("focusin", () => toggleColumnHover(column, true));
+        column.addEventListener("focusout", () => toggleColumnHover(column, false));
     });
 }
+
+document.addEventListener("DOMContentLoaded", setupServiceHover);
 
 

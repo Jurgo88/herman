@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies a Microsoft Clarity | Green Star</title>
+    <meta name="description" content="Zistite, ako Green Star používa Microsoft Clarity na anonymizovanú analytiku a aké cookies pri tom vznikajú.">
+    <link rel="stylesheet" href="/src/style.css">
+    <link rel="icon" type="image/x-icon" href="public/assets/img/favicon.ico">
+    <link rel="shortcut icon" href="public/assets/img/favicon-32x32.png" sizes="32x32">
+    <style>
+        :root {
+            --bg-start: #050b1a;
+            --bg-end: #0f172a;
+            --accent: #9cf459;
+            --accent-dark: #7fb33a;
+            --muted: rgba(255, 255, 255, 0.72);
+            --panel: rgba(8, 13, 30, 0.9);
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+            background: radial-gradient(circle at 20% 20%, rgba(156, 244, 89, 0.12), transparent 45%),
+                radial-gradient(circle at 80% 0%, rgba(87, 193, 247, 0.18), transparent 40%),
+                linear-gradient(180deg, var(--bg-start), var(--bg-end));
+            color: #f4f6fb;
+            margin: 0;
+        }
+
+        .cookies-shell {
+            min-height: 100vh;
+            padding: 3rem 1.25rem 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .cookies-hero {
+            background: linear-gradient(135deg, rgba(156, 244, 89, 0.16), rgba(79, 161, 255, 0.16));
+            padding: 2.75rem;
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cookies-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.3), transparent 45%);
+            pointer-events: none;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.8rem, 4vw, 3.6rem);
+            margin: 0.5rem 0 1rem;
+            color: #fff;
+        }
+
+        .hero-text p {
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-cta a {
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 999px;
+            padding: 0.75rem 1.75rem;
+            border: 1px solid transparent;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .hero-cta .secondaryButton {
+            background: var(--accent);
+            color: #050b1a;
+            border: none;
+            box-shadow: 0 10px 25px rgba(156, 244, 89, 0.25);
+        }
+
+        .hero-cta .secondaryButton:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-cta .ghost {
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            color: #f4f6fb;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .hero-card {
+            background: #01040b;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card strong {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .panel {
+            background: var(--panel);
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .panel h2 {
+            margin-top: 0;
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .panel p,
+        .panel ul {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .panel ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .panel ul li::before {
+            content: "•";
+            margin-right: 0.5rem;
+            color: var(--accent);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1rem 1.25rem;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .card strong {
+            font-size: 1.15rem;
+            color: #fff;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        th,
+        td {
+            padding: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: left;
+        }
+
+        th {
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        td:nth-child(2) {
+            color: #fff;
+        }
+
+        .rights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .rights p {
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .cookies-hero {
+                padding: 2rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cookies-shell">
+        <header class="cookies-hero">
+            <div class="hero-text">
+                <p class="eyebrow">Transparentnosť</p>
+                <h1>Cookies a Microsoft Clarity</h1>
+                <p>Na stránke Green Star sledujeme len anonymizované signály, aby sme porozumeli, čo v rámci služby vyhovuje našim návštevníkom. Používame výhradne Microsoft Clarity; žiadne iné analytické, reklamné či trackingové nástroje nebežia.</p>
+                <div class="hero-cta">
+                    <a href="/index.html" class="secondaryButton">Späť na domov</a>
+                    <a href="#clarity" class="ghost">Pozri detail</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <strong>Microsoft Clarity</strong>
+                <p>Analyzujeme toky na stránke a reagujeme iba na celkové vzorce správania. Nikdy neprepojíme dáta s vaším menom ani kontaktom.</p>
+                <p>Ak si neželáte zber, vypnite cookies vo svojom prehliadači alebo navštívte stránku <a href="https://clarity.microsoft.com/opt-out" target="_blank" rel="noreferrer">clarity.microsoft.com/opt-out</a>.</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="panel" id="overview">
+                <h2>Prehľad používania cookies</h2>
+                <p>Všetky cookie súbory zapíname len za účelom transparentnej analytiky. Vďaka nim vieme zlepšovať obsah, rýchlosť načítania a navigáciu bez zdieľania vašich osobných údajov s tretími stranami.</p>
+                <ul>
+                    <li>Cookies sa ukladajú iba pre Microsoft Clarity; nejde o reklamné siete ani marketingové platformy.</li>
+                    <li>Prihlásenie, košík či iné funkcionality nepoužívajú žiadne ďalšie súbory cookie.</li>
+                    <li>Metriky slúžia výhradne na optimalizáciu dizajnu a výkonu, nie na identifikáciu osôb.</li>
+                    <li>Môžete kedykoľvek v nastaveniach prehliadača cookies vypnúť; stránky však budú bežať bez zobrazených údajov analýzy.</li>
+                </ul>
+            </section>
+
+            <section class="panel" id="clarity">
+                <h2>Microsoft Clarity v praxi</h2>
+                <div class="cards">
+                    <div class="card">
+                        <strong>Heatmapy</strong>
+                        <p>Clarity vizualizuje, kde návštevníci klikajú a ako sa pohybujú na stránke, bez prístupu k obsahu formulárov.</p>
+                    </div>
+                    <div class="card">
+                        <strong>Sesssion replay</strong>
+                        <p>Session replay zachytáva anonymizované prehliadanie, ktoré pomáha odhaliť mŕtve odkazy alebo prekážky v ceste k objednávke.</p>
+                    </div>
+                    <div class="card">
+                        <strong>Chyby a výkony</strong>
+                        <p>Sledovanie chýb a času načítania nám ukazuje, kde stránka potrebuje ďalšiu optimalizáciu.</p>
+                    </div>
+                </div>
+                <p>Clarity je poskytovaná Microsoftom. Viac o ich zásadách ochrany súkromia sa dozviete na <a href="https://clarity.microsoft.com/privacy" target="_blank" rel="noreferrer">clarity.microsoft.com/privacy</a>.</p>
+            </section>
+
+            <section class="panel">
+                <h2>Detail cookies</h2>
+                <p>Nižšie nájdete konkrétne cookie súbory, ktoré Microsoft Clarity umiestňuje na vaše zariadenie:</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cookies</th>
+                                <th>Účel</th>
+                                <th>Platnosť</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CLID, MSCC, CLUT</td>
+                                <td>Umožňujú anonymné sledovanie relácie, heatmapy a záznamy návštev.</td>
+                                <td>Približne 365 dní alebo do zmazania prehliadačom.</td>
+                            </tr>
+                            <tr>
+                                <td>CLSecure</td>
+                                <td>Zaisťuje, že údaje sa posielajú len z platného prehliadača.</td>
+                                <td>Krátkodobo, do reštartu relácie.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>Vaše práva</h2>
+                <div class="rights">
+                    <div>
+                        <strong>Lokalizovaná kontrola</strong>
+                        <p>Každý moderný prehliadač umožňuje vypnúť alebo upraviť cookies. Táto voľba ovplyvní len analytiku; obsah zostáva plne dostupný.</p>
+                    </div>
+                    <div>
+                        <strong>Žiadne profily</strong>
+                        <p>Nikdy nespojíme vaše správanie so základnými údajmi ako meno, email alebo telefón. Clarity pracuje len s anonymizovanými tokenmi.</p>
+                    </div>
+                    <div>
+                        <strong>Kontakt</strong>
+                        <p>Máte otázky k súkromiu? Napíšte nám cez formulár na našej hlavnej stránke; odpovieme do 48 hodín.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            © 2026 Green Star • Cookies policy pre Microsoft Clarity
+        </footer>
+    </div>
+</body>
+</html>

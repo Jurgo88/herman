@@ -15,6 +15,12 @@
     align-items: center;
     gap: 1rem;
     font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cookies-popup span {
+    max-width: 350px;
 }
 
 .cookies-popup button {
@@ -38,4 +44,127 @@
 
 .cookies-popup a:hover {
     color: #45a049;
+}
+
+.cookies-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.cookies-info-link {
+    color: #9cf459;
+    font-weight: 600;
+}
+
+.cookies-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 11, 26, 0.85);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 1.5rem;
+}
+
+.cookies-modal.is-open {
+    display: flex;
+}
+
+.cookies-modal-content {
+    width: min(640px, 100%);
+    background: #050b1a;
+    padding: 2rem;
+    border-radius: 28px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cookies-modal-content h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.cookies-modal-content p {
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.6;
+}
+
+.cookies-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cookies-modal-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.cookies-modal-body strong {
+    display: block;
+    color: #9cf459;
+    margin-bottom: 0.35rem;
+}
+
+.cookies-modal-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.cookies-modal-table > div {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1rem;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cookies-modal-table strong {
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.cookies-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cookies-modal-reject {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 999px;
+    padding: 0.55rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cookies-modal-reject:hover {
+    border-color: #fff;
+}
+
+.cookies-modal-footer {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.cookies-modal-footer a {
+    color: #9cf459;
+    text-decoration: underline;
 }
