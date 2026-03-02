@@ -1,75 +1,106 @@
-$(document).ready(function() {
-    $('.right').on('click', function(event) {
-        // Your code here
-        console.log('Bottom class element clicked:', this);
-        // Prevent default action if needed
-        // event.preventDefault();
-        // Add your custom logic here
-        // For example, you can toggle a class or perform an action
-        $('.bazeny').addClass('active');
-        $('.cistky').removeClass('active');
-        $('.services h2').text('Ponúkame');
-        showSections();
-        $('#works-bazeny').show();        
-        $('#works-cistky').hide();
-
-        // Scroll to the "ourworks" section smoothly
-        document.getElementById('ourworks').scrollIntoView({ behavior: 'smooth' });
-    });
-    $('.left').on('click', function(event) {
-        // Your code here
-        console.log('Top class element clicked:', this);
-        // Prevent default action if needed
-        // event.preventDefault();
-        // Add your custom logic here
-        // For example, you can toggle a class or perform an action
-        $('.cistky').addClass('active');
-        $('.bazeny').removeClass('active');
-        $('.services h2').text('Pri práci používame');
-        showSections();
-        $('#works-cistky').show();
-        $('#works-bazeny').hide();
-        // Scroll to the "ourworks" section smoothly
-        document.getElementById('ourworks').scrollIntoView({ behavior: 'smooth' });
-    });
-});
-
-//hide all section expect hero section on page load
 const sections = document.querySelectorAll('section');
-sections.forEach(section => {
-    if (!section.classList.contains('hero')) {
-        section.style.display = 'none';
-    }
+const left = document.querySelector(".left");
+const right = document.querySelector(".right");
+const container = document.querySelector(".containerHero");
+
+document.addEventListener("DOMContentLoaded", () => {
+  const rightTrigger = document.querySelector('.right');
+  const leftTrigger = document.querySelector('.left');
+  const worksCistky = document.getElementById('works-cistky');
+  const worksBazeny = document.getElementById('works-bazeny');
+  const servicesHeading = document.querySelector('.services h2');
+  const cistkyTabs = document.querySelector('.cistky');
+  const bazenyTabs = document.querySelector('.bazeny');
+
+  const showElement = (el) => {
+    if (!el) return;
+    el.style.display = '';
+  };
+
+  const hideElement = (el) => {
+    if (!el) return;
+    el.style.display = 'none';
+  };
+
+  if (rightTrigger) {
+    rightTrigger.addEventListener('click', () => {
+      console.log('Bottom class element clicked:', rightTrigger);
+      bazenyTabs?.classList.add('active');
+      cistkyTabs?.classList.remove('active');
+      if (servicesHeading) servicesHeading.textContent = 'Ponúkame';
+      showSections();
+      showElement(worksBazeny);
+      hideElement(worksCistky);
+      document.getElementById('ourworks')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  if (leftTrigger) {
+    leftTrigger.addEventListener('click', () => {
+      console.log('Top class element clicked:', leftTrigger);
+      cistkyTabs?.classList.add('active');
+      bazenyTabs?.classList.remove('active');
+      if (servicesHeading) servicesHeading.textContent = 'Pri práci používame';
+      showSections();
+      showElement(worksCistky);
+      hideElement(worksBazeny);
+      document.getElementById('ourworks')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
 });
+
+sections.forEach(section => {
+  if (!section.classList.contains('hero')) {
+    section.style.display = 'none';
+  }
+});
+
+const cameFromInternalPage = (() => {
+  try {
+    if (!document.referrer) {
+      return false;
+    }
+    const referrerUrl = new URL(document.referrer);
+    return referrerUrl.origin === window.location.origin && referrerUrl.pathname !== window.location.pathname;
+  } catch (error) {
+    return false;
+  }
+})();
+
+if (window.location.hash || cameFromInternalPage) {
+  showSections();
+}
 
 //function to show selections and sitcky-top on click
 function showSections() {
   sections.forEach(section => {
     section.style.display = 'block';
   });
-  $('.sticky-top').show();
-  //footer show
-  document.querySelector('footer').style.display = 'block';
+  const navbar = document.querySelector('.sticky-top');
+  if (navbar) {
+    navbar.style.display = 'block';
+  }
+  const footer = document.querySelector('footer');
+  if (footer) {
+    footer.style.display = 'block';
+  }
 }
 
+if (left && right && container) {
+  left.addEventListener("mouseenter", () => {
+    container.classList.add("hover-left");
+  });
 
-const left = document.querySelector(".left");
-const right = document.querySelector(".right");
-const container = document.querySelector(".containerHero");
+  left.addEventListener("mouseleave", () => {
+    container.classList.remove("hover-left");
+  });
 
-left.addEventListener("mouseenter", () => {
-  container.classList.add("hover-left");
-});
+  right.addEventListener("mouseenter", () => {
+    container.classList.add("hover-right");
+  });
 
-left.addEventListener("mouseleave", () => {
-  container.classList.remove("hover-left");
-});
-
-right.addEventListener("mouseenter", () => {
-  container.classList.add("hover-right");
-});
-
-right.addEventListener("mouseleave", () => {
-  container.classList.remove("hover-right");
-});
+  right.addEventListener("mouseleave", () => {
+    container.classList.remove("hover-right");
+  });
+}
 

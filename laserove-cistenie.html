@@ -4,22 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Čistenie laserom | Green Star</title>
-
     <link rel="stylesheet" href="/src/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="preload" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+    <script async src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/fc3a6f972f.js" crossorigin="anonymous" async></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="public/assets/img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/assets/img/apple-touch-icon.png">
+    <link rel="icon" href="public/assets/img/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="icon" href="public/assets/img/favicon-512x512.png" sizes="512x512" />
+    <link rel="icon" href="public/assets/img/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" href="public/assets/img/favicon-32x32.png" sizes="32x32" />
 
 </head>
 <body>
 
-<!-- HEADER môžeš skopírovať z indexu -->
 <header class="sticky-top">
   <div class="container-lg">
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg ">
       <div class="container-lg">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/index.html">
           <img src="public/assets/img/logo_gs.svg" alt="logo" class="logo">
         </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Zavrieť"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Domov</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#onas">O nás</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#ourworks">Portfólio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/laserove-cistenie.html">Čistenie laserom</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html#contact">Kontakt</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   </div>
@@ -32,30 +69,30 @@
   <div class="laser-beam"></div>
 
   <div class="container text-center hero-content">
+    <div class="laser-heading">
+      <img src="public/assets/img/logo_gs.svg" alt="logo" class="laser-logo">
       <h1 class="laser-title">
         <span class="laser-text">ČISTENIE LASEROM</span>
       </h1>
+    </div>
 
-      <p class="laser-subtitle">
-          Laserové čistenie je rýchle, presné a ekologické riešenie 
-          pre priemysel, výrobu aj renovácie.
-      </p>
-
-      <a href="#benefits" class="primaryButton mt-4">Zistiť viac</a>
+      <a href="#benefits" class="secondaryButton mt-4">Zistiť viac</a>
   </div>
 </section>
 
 <!-- BENEFITS -->
 <section class="laser-benefits">
-  <div class="container text-center">
-      <h2>BEZ CHÉMIE / BEZ POŠKODENIA VYČISTÍME</h2>
+    <div> 
+        <p class="laser-subtitle">
+          Laserové čistenie je rýchle, presné a ekologické riešenie 
+          pre priemysel, výrobu aj renovácie.
+        </p>
+    </div>
+    <br>
 
-      <div class="row justify-content-center mt-4">
-          <div class="col-auto benefit-item">HRDZA</div>
-          <div class="col-auto benefit-item">FARBA</div>
-          <div class="col-auto benefit-item">MASTNOTA</div>
-          <div class="col-auto benefit-item">GRAFFITI</div>
-      </div>
+  <div class="container text-center" id="benefits">
+      <h2>BEZ CHÉMIE / BEZ POŠKODENIA<br>VYČISTÍME</h2>
+      <p class="benefit-line">HRDZA • FARBA • MASTNOTA • GRAFFITI</p>
   </div>
 </section>
 
@@ -79,7 +116,18 @@
   </div>
 </section>
 
+<footer>
+  <p class="thisYear"></p>
+</footer>
+<script>
+  const yearElement = document.querySelector('.thisYear');
+  const currentYear = new Date().getFullYear();
+  yearElement.innerHTML = `&copy; ${currentYear} &nbsp; &nbsp; Design by <a href="https://www.peterzigo.sk">Peter Zigo</a> &NonBreakingSpace; &nbsp; Created by <a href="https://www.jurgo.sk">Jurgo</a>`;
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="src/js/navbar.js"></script>
+<script type="module" src="src/js/stickyNavbar.js"></script>
+<script type="module" src="src/js/cookies.js"></script>
 </body>
 </html>

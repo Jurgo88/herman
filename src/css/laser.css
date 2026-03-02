@@ -2,82 +2,152 @@
    LASER PAGE
 ============================= */
 
+body {
+  background: #070b12;
+}
+
 .laser-hero {
   position: relative;
-  height: 85vh;
+  min-height: 48vh;
   background: url("../public/assets/img/billboard.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .laser-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+  background: linear-gradient(to bottom, rgba(2, 10, 22, 0.5), rgba(4, 8, 15, 0.82));
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+  padding: 5rem 0 3rem;
+}
+
+.laser-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 1.25rem;
+}
+
+.laser-logo {
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
 }
 
 .laser-title {
-  font-size: 4rem;
+  font-size: clamp(2.3rem, 5.4vw, 4.5rem);
   font-weight: 800;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   color: white;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.laser-text {
+  display: inline-block;
+  border-top: 3px solid rgba(106, 172, 63, 0.55);
+  border-bottom: 3px solid rgba(106, 172, 63, 0.55);
 }
 
 .laser-subtitle {
-  font-size: 1.3rem;
-  color: #39d353;
-  margin-top: 20px;
-  font-weight: 600;
+  max-width: 1024px;
+  margin: 1.5rem auto 0;
+  font-size: clamp(1.35rem, 2.4vw, 2.9rem);
+  line-height: 1.2;
+  color: #3eb4ff;
+  font-weight: 700;
+  text-shadow: 0 0 16px rgba(62, 180, 255, 0.2);
 }
 
 
 /* BENEFITS */
 
 .laser-benefits {
-  background: #0f141b;
-  padding: 80px 0;
+  background: #070b12;
+  padding: 7rem 0 3.5rem;
   color: white;
 }
 
-.benefit-item {
-  font-weight: 700;
-  color: #39d353;
-  font-size: 1.3rem;
-  margin: 10px 20px;
+.laser-benefits h2,
+.laser-work h2 {
+  font-size: clamp(2rem, 5.2vw, 4.3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 2.2rem;
+}
+
+.benefit-line {
+  margin: 0;
+  font-size: clamp(1.6rem, 3.2vw, 2.9rem);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #b6e94e;
+  text-transform: uppercase;
 }
 
 
 /* WORK */
 
 .laser-work {
-  padding: 80px 0;
-  background: #0b0f14;
+  padding: 3.5rem 0 8rem;
+  background: #070b12;
   color: white;
 }
 
 .work-card {
-  height: 220px;
-  background: #1a1f27;
-  border-radius: 10px;
-  transition: 0.3s ease;
+  height: 250px;
+  background: #f1f1f1;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
 }
 
 .work-card:hover {
-  transform: translateY(-6px);
-  background: #222a35;
+  transform: translateY(-5px);
 }
 
 
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
+  .hero-content {
+    padding: 4rem 0 2.5rem;
+  }
+
   .laser-title {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
+  }
+
+  .laser-heading {
+    gap: 12px;
+  }
+
+  .laser-logo {
+    width: 82px;
+  }
+
+  .laser-subtitle {
+    font-size: 2rem;
+    padding: 0 0.75rem;
+  }
+
+  .laser-benefits {
+    padding-top: 4.5rem;
+  }
+
+  .work-card {
+    height: 200px;
   }
 }
